@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using CugemderPortal.Server.Data;
 using CugemderPortal.Server.Models;
+using CugemderPortal.Shared.Models;
 
 namespace CugemderPortal.Server
 {
@@ -29,6 +30,9 @@ namespace CugemderPortal.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<cugemderDbCMSContext>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
