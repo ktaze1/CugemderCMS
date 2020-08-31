@@ -1,0 +1,56 @@
+﻿@page "/userlist"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using CugemderPortal.Shared.Models
+<!-- attribute [Authorize] -->
+@inject HttpClient Http
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+        @if (userlist == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Temp. (C)</th>
+                        <th>Temp. (F)</th>
+                        <th>Summary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in userlist)
+                    {
+                    <tr>
+                        <td>@user.Email</td>
+                        <td>@user.Email</td>
+                        <td>@user.Email</td>
+                        <td>@user.Email</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+@code {
+    private AspNetUsers[] userlist;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            userlist = await Http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers");
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+}
