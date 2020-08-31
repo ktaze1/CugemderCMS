@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "CugemderPortal.Client.dll": "sha256-6C5U2\/BTLlkMVW6WxnD4BhIdsCENeMveseKxa2crDSo=",
+      "CugemderPortal.Client.dll": "sha256-ozTZRzcRDfkYUVu48Art\/\/EtYmspx9\/eOqR7m5eLHHg=",
       "System.Net.Http.Json.dll": "sha256-99dseBOagY3mzu5Y8Eqm8gRI+o8QbbCp7R2Ew9bQ+5E=",
       "System.Buffers.dll": "sha256-ZxXy75PYbzJxNfAc\/SAP1nUYm4gt1jSaOpFnBb9m85M=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -66,7 +66,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "CugemderPortal.Client.pdb": "sha256-rnZ9dPduwHo+QuRWI0\/7SvoDpWYdaCpwtW1+FrBEuSU=",
+      "CugemderPortal.Client.pdb": "sha256-uODc64O5ROCiGeg3bMn68qfK5sN38fnhJtm8MI7KBkA=",
       "CugemderPortal.Shared.pdb": "sha256-Vy9R5rAvXR4F8GdoXTCay1FhUhCvQKVBKgoUcPYcUrI="
     },
     "runtime": {
