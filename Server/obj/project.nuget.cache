@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "38+AUky7KxdlOp0w0MVRGWhLyUHxocJCHm45x0YAlL3SoWP2WbSbXo74pMDCsO42DczMHOxMKJrRyPaqDcjk+A==",
+  "dgSpecHash": "kzsA9F+9afh+jrSgM4Fm81ZroN66TtXTkR9fxDMOvwSUtON6UEEE/soquIexpgpvrRMImh8ibOQkdU72LvvIBQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
+  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Server\\CugemderPortal.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kaan\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Kaan\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",

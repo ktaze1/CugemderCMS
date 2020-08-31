@@ -6793,11 +6793,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Server\\CugemderPortal.Server.csproj",
       "projectName": "CugemderPortal.Server",
-      "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
+      "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Server\\CugemderPortal.Server.csproj",
       "packagesPath": "C:\\Users\\Kaan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Server\\obj\\",
+      "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6817,11 +6817,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Client\\CugemderPortal.Client.csproj": {
-              "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Client\\CugemderPortal.Client.csproj"
+            "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Client\\CugemderPortal.Client.csproj": {
+              "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Client\\CugemderPortal.Client.csproj"
             },
-            "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {
-              "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj"
+            "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj": {
+              "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj"
             }
           }
         }

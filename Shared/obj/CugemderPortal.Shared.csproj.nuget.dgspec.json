@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {}
+    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {
+    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj",
         "projectName": "CugemderPortal.Shared",
-        "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj",
+        "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj",
         "packagesPath": "C:\\Users\\Kaan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Q24Vg1kjV9QbXh40wxZVoshyJf9JTAdHNXWDH7dp+0gdoGyMMwTMfU0JIHi8gyCZgRznvS1IgSgyxK9RHzu8A==",
+  "dgSpecHash": "ro0jXghhjUc+3yK3oR0uLm+Qny0SfGYusWNknt5vVq5ZXYcAHvv6cl1i1bKnZDqi3rprw+En0jjhmNkW2WUDpA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Client\\CugemderPortal.Client.csproj",
+  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Client\\CugemderPortal.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.6\\microsoft.aspnetcore.authorization.3.1.6.nupkg.sha512",
     "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.6\\microsoft.aspnetcore.components.3.1.6.nupkg.sha512",

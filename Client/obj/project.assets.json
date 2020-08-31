@@ -1760,11 +1760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Client\\CugemderPortal.Client.csproj",
+      "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Client\\CugemderPortal.Client.csproj",
       "projectName": "CugemderPortal.Client",
-      "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Client\\CugemderPortal.Client.csproj",
+      "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Client\\CugemderPortal.Client.csproj",
       "packagesPath": "C:\\Users\\Kaan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Client\\obj\\",
+      "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -1784,8 +1784,8 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {
-              "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj"
+            "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj": {
+              "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj"
             }
           }
         }
