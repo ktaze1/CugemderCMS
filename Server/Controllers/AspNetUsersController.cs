@@ -41,6 +41,21 @@ namespace CugemderPortal.Server.Controllers
             return aspNetUsers;
         }
 
+
+        [HttpGet("{id}")]
+        [Route("group/{id}")]
+        public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetUsersInGroup(int id)
+        {
+            var aspNetUsers = await _context.AspNetUsers.Where(c => c.Group == id).ToListAsync();
+
+            if (aspNetUsers == null)
+            {
+                return NotFound();
+            }
+
+            return aspNetUsers;
+        }
+
         // PUT: api/AspNetUsers/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

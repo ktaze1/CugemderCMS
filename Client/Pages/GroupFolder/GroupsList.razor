@@ -1,0 +1,58 @@
+﻿@page "/groups"
+@inject HttpClient client
+@inject IJSRuntime js
+
+<h3>Groups</h3>
+<div class="form-group">
+    <a class="btn btn-success" href="groups/create"><i class="oi oi-plus"></i> Create New</a>
+</div>
+<br>
+@if (groups == null)
+{
+    <text>Loading...</text>
+}
+else if (groups.Length == 0)
+{
+    <text>No Records Found.</text>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Group Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Groups group in groups)
+            {
+                <tr>
+                    <td>@group.Id</td>
+                    <td>@group.GroupName</td>
+                    <td>
+                        <a class="btn btn-success" href="groups/edit/@group.Id">Edit</a>
+                        <button class="btn btn-danger" @onclick="@(() => Delete(group.Id))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    Groups[] groups { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        groups = await client.GetFromJsonAsync<Groups[]>("api/groups");
+    }
+    async Task Delete(int groupsId)
+    {
+        var grp = groups.First(x => x.Id == groupsId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {grp.GroupName}'s ({grp.Id}) Record?"))
+        {
+            await client.DeleteAsync($"api/groups/{groupsId}");
+            await OnInitializedAsync();
+        }
+    }
+}

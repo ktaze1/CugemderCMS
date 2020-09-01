@@ -1,0 +1,26 @@
+﻿@page "/groups/edit/{groupsId:int}"
+@inject HttpClient http
+@inject NavigationManager uriHelper
+@inject IJSRuntime js
+<h3>Edit</h3>
+
+<CugemderPortal.Client.Pages.GroupFolder.GroupsForm 
+    ButtonText="Update" group="group" OnValidSubmit="@EditGroup" />
+
+@code {
+    [Parameter] public int groupsId { get; set; }
+
+    Groups group = new Groups();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        group = await http.GetFromJsonAsync<Groups>($"api/groups/{groupsId}");
+    }
+    async Task EditGroup()
+    {
+        group.UpdateAt = DateTime.UtcNow;
+        await http.PutAsJsonAsync($"api/groups/{groupsId}", group);
+        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        uriHelper.NavigateTo("groups");
+    }
+}

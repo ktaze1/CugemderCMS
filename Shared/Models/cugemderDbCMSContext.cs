@@ -16,13 +16,14 @@ namespace CugemderPortal.Shared.Models
         }
 
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<Groups> Groups { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("server=(localdb)\\cugemder;Database=cugemderDbCMS;Trusted_Connection=True;MultipleActiveResultSets=true");
+                optionsBuilder.UseSqlServer("server=(localdb)\\cugemder; Database=cugemderDbCMS; Trusted_Connection=True; MultipleActiveResultSets=true");
             }
         }
 
@@ -30,6 +31,9 @@ namespace CugemderPortal.Shared.Models
         {
             modelBuilder.Entity<AspNetUsers>(entity =>
             {
+                entity.HasIndex(e => e.Id)
+                    .HasName("IX_AspNetUsers");
+
                 entity.HasIndex(e => e.NormalizedEmail)
                     .HasName("EmailIndex");
 
@@ -73,6 +77,22 @@ namespace CugemderPortal.Shared.Models
                 entity.Property(e => e.UpdatedAt).HasColumnName("updatedAt");
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
+
+                entity.HasOne(d => d.GroupNavigation)
+                    .WithMany(p => p.AspNetUsers)
+                    .HasForeignKey(d => d.Group)
+                    .HasConstraintName("FK_AspNetUsers_AspNetUsers");
+            });
+
+            modelBuilder.Entity<Groups>(entity =>
+            {
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.GroupName)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.UpdateAt).HasColumnType("datetime");
             });
 
             OnModelCreatingPartial(modelBuilder);

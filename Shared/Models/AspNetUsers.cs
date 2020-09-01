@@ -35,5 +35,7 @@ namespace CugemderPortal.Shared.Models
         public int? Speciality { get; set; }
         public string SurName { get; set; }
         public DateTime? UpdatedAt { get; set; }
+
+        public virtual Groups GroupNavigation { get; set; }
     }
 }

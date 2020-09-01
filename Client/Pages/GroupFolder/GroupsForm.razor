@@ -1,0 +1,22 @@
+﻿
+<EditForm Model="@group" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label>Group Name :</label>
+        <div>
+            <InputText @bind-Value="@group.GroupName" />
+            <ValidationMessage For="@(() => group.GroupName)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">
+        @ButtonText
+    </button>
+</EditForm>
+
+@code {
+    [Parameter] public Groups group { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    DateTime time = DateTime.UtcNow;
+}

@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "CugemderPortal.Client.dll": "sha256-PSJMVuUYtW0wlbE7YZAfxjc3FxMyqhQNhsdEJC8ctuc=",
+      "CugemderPortal.Client.dll": "sha256-ibm1umoekkXIayhOOKeybfJjrI+XecK7P3mjLNIdR2k=",
       "System.Net.Http.Json.dll": "sha256-99dseBOagY3mzu5Y8Eqm8gRI+o8QbbCp7R2Ew9bQ+5E=",
       "System.Buffers.dll": "sha256-ZxXy75PYbzJxNfAc\/SAP1nUYm4gt1jSaOpFnBb9m85M=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -44,7 +44,12 @@
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-82ZFUNQ\/lINILPY15Gjhju9hI7B2BXjHEQQDTeXhVek=",
       "Microsoft.Extensions.Options.dll": "sha256-CNukDMTMsZ77nI593UgjfZkJqNhgDLvnpUjL2QzFL2M=",
       "Microsoft.Extensions.Primitives.dll": "sha256-ylX7VKoH7433xA+yHLYr6lPOuhCKV4qhw7GLUx6J82E=",
-      "CugemderPortal.Shared.dll": "sha256-cQ7ZnO5aXtr1yvz6xTe3T7\/MUbbdcNf7EOH3ZHVkbuM=",
+      "Microsoft.AspNetCore.Components.Forms.dll": "sha256-m7Q+cF5\/ji3OMfdGlCuE8pQ\/iM+kxNHLq\/IEWVvIaOg=",
+      "System.ComponentModel.Annotations.dll": "sha256-tmnkCmP9OzLUkpQ3LP7PRosi7gt5pyfEZCM6aqAokFI=",
+      "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-PEg9ghiKSWBTX0jq8pFDvv2Yvw92Y8W0ELtWrSE4fhA=",
+      "Microsoft.JSInterop.dll": "sha256-LqwA2Rpm96Ualk0IhLZar87kfRCyKHzHTeTt2jYhm7M=",
+      "CugemderPortal.Shared.dll": "sha256-mVib5XtaYzFcCIz22XSCNGqPdt0DKoU\/M3CgTSTfJDo=",
       "Microsoft.EntityFrameworkCore.Relational.dll": "sha256-XyAokdpwfGqmUdYp2pPSTtq7glZsc4+na2cubhJrsD0=",
       "System.Diagnostics.DiagnosticSource.dll": "sha256-MyQpxJogZX2HZkOwjTQKfhArqV0\/EJJxgpF\/E+YjP2w=",
       "System.Runtime.Extensions.dll": "sha256-1FBfAreOfbXDp0WA294BCrk0EIa5ZqlghOuvDlqFtk8=",
@@ -59,8 +64,6 @@
       "System.Runtime.dll": "sha256-6CpyRQAYrVPJfNYBKH0K9lWX+rNPO15lwNhGHPmvxtk=",
       "Microsoft.Extensions.Caching.Abstractions.dll": "sha256-1tRpRVrSk6J1iBH4cFKrg3N\/QIYJVONgLbfNaliTLyI=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-1T9tyZDZIAxKTpjY0la\/wOldY8VPnH6edD95RC80r2E=",
-      "System.ComponentModel.Annotations.dll": "sha256-tmnkCmP9OzLUkpQ3LP7PRosi7gt5pyfEZCM6aqAokFI=",
-      "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
       "Microsoft.Bcl.HashCode.dll": "sha256-EgI54utAG8\/FzG3MEe0rzng4UdnK+GAS1+T5G6CzXfk=",
       "Microsoft.EntityFrameworkCore.Abstractions.dll": "sha256-jwuU8F7rNVOmV+vsvTYo3KNLtZkkSHB9wtU8kiR5Pqc=",
       "Microsoft.EntityFrameworkCore.dll": "sha256-jn\/W0gQUemSfH2Jjn1HqrwruNu1qxVd6nZ9M6nSGvBs=",
@@ -71,11 +74,8 @@
       "Microsoft.AspNetCore.Authorization.dll": "sha256-4NUQ26HmvXRi8smc0jz9940OUECDLQnoMWQLrMLe0ok=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-825GQI5nG1C1WqLD1SNKSpjzLCNbH2\/KChgjBL0SSXI=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-bSgsT2x5xMvs8mara5wU+EJwcyHa9GVMU85HwhWcdWM=",
-      "Microsoft.AspNetCore.Components.Forms.dll": "sha256-m7Q+cF5\/ji3OMfdGlCuE8pQ\/iM+kxNHLq\/IEWVvIaOg=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-PEg9ghiKSWBTX0jq8pFDvv2Yvw92Y8W0ELtWrSE4fhA=",
       "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-5lY1KL\/pA7kS\/OYycrkrhkXJKFHJHVbdmUTyPYaqDiM=",
       "Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll": "sha256-AbWZIV0k4GOA+qT6O3719kiJxV5XbyEXKBWjy7wE8w4=",
-      "Microsoft.JSInterop.dll": "sha256-LqwA2Rpm96Ualk0IhLZar87kfRCyKHzHTeTt2jYhm7M=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-FJ+rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=",
       "Microsoft.Extensions.Configuration.dll": "sha256-Pv0bA+gEl+gycgBRmD7++LIzBA66qcH+b7G5FecHyVY=",
       "Microsoft.Extensions.Configuration.Json.dll": "sha256-mQqyOIjuVduaLQ7ZyvDrChDLp8rTeQknIIWDzqsO4eY=",
@@ -86,8 +86,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "CugemderPortal.Client.pdb": "sha256-DEgM6fpshJFoJZJQrc8vXs\/EZGfN5NWtoz4aj4\/KFgk=",
-      "CugemderPortal.Shared.pdb": "sha256-G0wIYV6qEP7HME+xo7yH4uDzuGqsNkWJc81TH9KRtXY=",
+      "CugemderPortal.Client.pdb": "sha256-Gn2ylqgVqMWpy2nOuY7kU0jXablspdC8U4rInzM4uJo=",
+      "CugemderPortal.Shared.pdb": "sha256-0IlhUlQBe8nmUVBQhG1G3tdvACjgjk7NGBuPbC02nsI=",
       "Microsoft.Data.SqlClient.pdb": "sha256-ymdPEsfx1uHdDaqrWa2MDKtStIdJa\/Wa33nxT48pI9s="
     },
     "runtime": {
