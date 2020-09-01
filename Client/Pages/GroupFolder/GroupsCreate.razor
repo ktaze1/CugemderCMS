@@ -1,0 +1,18 @@
+﻿@page "/groups/create"
+@inject HttpClient http
+@inject NavigationManager uriHelper
+
+<h2> Create Group </h2>
+
+<CugemderPortal.Client.Pages.GroupFolder.GroupsForm
+    ButtonText="Create Group" group="@group" OnValidSubmit="@CreateGroup" />
+
+@code {
+    Groups group = new Groups();
+    async Task CreateGroup()
+    {
+        group.CreatedAt = DateTime.UtcNow;
+        await http.PostAsJsonAsync<Groups>("api/Groups", group);
+        uriHelper.NavigateTo("groups");
+    }
+}

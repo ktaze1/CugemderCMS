@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {}
+    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {
+    "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj",
         "projectName": "CugemderPortal.Shared",
-        "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj",
+        "projectPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj",
         "packagesPath": "C:\\Users\\Kaan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,28 @@
       },
       "frameworks": {
         "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
