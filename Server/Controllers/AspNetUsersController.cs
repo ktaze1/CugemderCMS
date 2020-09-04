@@ -13,9 +13,9 @@ namespace CugemderPortal.Server.Controllers
     [ApiController]
     public class AspNetUsersController : ControllerBase
     {
-        private readonly cugemderDbCMSContext _context;
+        private readonly CugemderDatabaseContext _context;
 
-        public AspNetUsersController(cugemderDbCMSContext context)
+        public AspNetUsersController(CugemderDatabaseContext context)
         {
             _context = context;
         }
@@ -24,7 +24,9 @@ namespace CugemderPortal.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetAspNetUsers()
         {
-            return await _context.AspNetUsers.ToListAsync();
+            return await _context.AspNetUsers
+                .Include(c => c.GroupNavigation)
+                .ToListAsync();
         }
 
         // GET: api/AspNetUsers/5
@@ -41,12 +43,27 @@ namespace CugemderPortal.Server.Controllers
             return aspNetUsers;
         }
 
+        [HttpGet]
+        [Route("username/{email}")]
+        public async Task<ActionResult<AspNetUsers>> GetUsername(string email)
+        {
+            var aspNetUsers = await _context.AspNetUsers.Where(c => c.Email == email).FirstOrDefaultAsync();
 
-        [HttpGet("{id}")]
+            if (aspNetUsers == null)
+            {
+                return NotFound();
+            }
+
+            return aspNetUsers;
+        }
+
+
+        [HttpGet]
         [Route("group/{id}")]
         public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetUsersInGroup(int id)
         {
             var aspNetUsers = await _context.AspNetUsers.Where(c => c.Group == id).ToListAsync();
+            var test2 = new List<AspNetUsers>();
 
             if (aspNetUsers == null)
             {

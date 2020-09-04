@@ -13,9 +13,9 @@ namespace CugemderPortal.Server.Controllers
     [ApiController]
     public class GroupsController : ControllerBase
     {
-        private readonly cugemderDbCMSContext _context;
+        private readonly CugemderDatabaseContext _context;
 
-        public GroupsController(cugemderDbCMSContext context)
+        public GroupsController(CugemderDatabaseContext context)
         {
             _context = context;
         }

@@ -15,7 +15,7 @@ namespace CugemderPortal.Server.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.6")
+                .HasAnnotation("ProductVersion", "3.1.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -94,6 +94,9 @@ namespace CugemderPortal.Server.Data.Migrations
 
                     b.Property<int?>("notifications")
                         .HasColumnType("int");
+
+                    b.Property<string>("phoneNo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("photoUrl")
                         .HasColumnType("nvarchar(max)");

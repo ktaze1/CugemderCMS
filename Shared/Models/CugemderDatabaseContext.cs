@@ -15,13 +15,22 @@ namespace CugemderPortal.Shared.Models
         {
         }
 
+        public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
+        public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<DeviceCodes> DeviceCodes { get; set; }
         public virtual DbSet<Genders> Genders { get; set; }
         public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<JobTitles> JobTitles { get; set; }
         public virtual DbSet<Notifications> Notifications { get; set; }
+        public virtual DbSet<PersistedGrants> PersistedGrants { get; set; }
         public virtual DbSet<Points> Points { get; set; }
         public virtual DbSet<Positions> Positions { get; set; }
+        public virtual DbSet<Uploads> Uploads { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,6 +43,85 @@ namespace CugemderPortal.Shared.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AspNetRoleClaims>(entity =>
+            {
+                entity.HasIndex(e => e.RoleId);
+
+                entity.Property(e => e.RoleId).IsRequired();
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.AspNetRoleClaims)
+                    .HasForeignKey(d => d.RoleId);
+            });
+
+            modelBuilder.Entity<AspNetRoles>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedName)
+                    .HasName("RoleNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedName] IS NOT NULL)");
+
+                entity.Property(e => e.Name).HasMaxLength(256);
+
+                entity.Property(e => e.NormalizedName).HasMaxLength(256);
+            });
+
+            modelBuilder.Entity<AspNetUserClaims>(entity =>
+            {
+                entity.HasIndex(e => e.UserId);
+
+                entity.Property(e => e.UserId).IsRequired();
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserClaims)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<AspNetUserLogins>(entity =>
+            {
+                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+
+                entity.HasIndex(e => e.UserId);
+
+                entity.Property(e => e.LoginProvider).HasMaxLength(128);
+
+                entity.Property(e => e.ProviderKey).HasMaxLength(128);
+
+                entity.Property(e => e.UserId).IsRequired();
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserLogins)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<AspNetUserRoles>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.RoleId });
+
+                entity.HasIndex(e => e.RoleId);
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.AspNetUserRoles)
+                    .HasForeignKey(d => d.RoleId);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserRoles)
+                    .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<AspNetUserTokens>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
+
+                entity.Property(e => e.LoginProvider).HasMaxLength(128);
+
+                entity.Property(e => e.Name).HasMaxLength(128);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserTokens)
+                    .HasForeignKey(d => d.UserId);
+            });
+
             modelBuilder.Entity<AspNetUsers>(entity =>
             {
                 entity.HasIndex(e => e.NormalizedEmail)
@@ -63,6 +151,8 @@ namespace CugemderPortal.Shared.Models
                 entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
 
                 entity.Property(e => e.Notifications).HasColumnName("notifications");
+
+                entity.Property(e => e.PhoneNo).HasColumnName("phoneNo");
 
                 entity.Property(e => e.PhotoUrl).HasColumnName("photoUrl");
 
@@ -111,6 +201,30 @@ namespace CugemderPortal.Shared.Models
                     .HasConstraintName("FK_AspNetUsers_Positions");
             });
 
+            modelBuilder.Entity<DeviceCodes>(entity =>
+            {
+                entity.HasKey(e => e.UserCode);
+
+                entity.HasIndex(e => e.DeviceCode)
+                    .IsUnique();
+
+                entity.HasIndex(e => e.Expiration);
+
+                entity.Property(e => e.UserCode).HasMaxLength(200);
+
+                entity.Property(e => e.ClientId)
+                    .IsRequired()
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.Data).IsRequired();
+
+                entity.Property(e => e.DeviceCode)
+                    .IsRequired()
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.SubjectId).HasMaxLength(200);
+            });
+
             modelBuilder.Entity<Genders>(entity =>
             {
                 entity.Property(e => e.GenderName)
@@ -150,6 +264,29 @@ namespace CugemderPortal.Shared.Models
                     .HasMaxLength(500);
             });
 
+            modelBuilder.Entity<PersistedGrants>(entity =>
+            {
+                entity.HasKey(e => e.Key);
+
+                entity.HasIndex(e => e.Expiration);
+
+                entity.HasIndex(e => new { e.SubjectId, e.ClientId, e.Type });
+
+                entity.Property(e => e.Key).HasMaxLength(200);
+
+                entity.Property(e => e.ClientId)
+                    .IsRequired()
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.Data).IsRequired();
+
+                entity.Property(e => e.SubjectId).HasMaxLength(200);
+
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
+
             modelBuilder.Entity<Points>(entity =>
             {
                 entity.Property(e => e.AddedBy).IsRequired();
@@ -162,6 +299,21 @@ namespace CugemderPortal.Shared.Models
                 entity.Property(e => e.Position)
                     .IsRequired()
                     .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Uploads>(entity =>
+            {
+                entity.Property(e => e.FileName).IsRequired();
+
+                entity.Property(e => e.UserId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Uploads)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Uploads_AspNetUsers");
             });
 
             OnModelCreatingPartial(modelBuilder);

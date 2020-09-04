@@ -21,6 +21,8 @@ namespace CugemderPortal.Server.Models
 
         public string? photoUrl { get; set; }
 
+        public string? phoneNo { get; set; }
+
         public int? jobTitle { get; set; }
 
         public string? speciality { get; set; }

@@ -14,6 +14,7 @@ using System.Linq;
 using CugemderPortal.Server.Data;
 using CugemderPortal.Server.Models;
 using CugemderPortal.Shared.Models;
+//using CugemderPortal.Server.Services;
 
 namespace CugemderPortal.Server
 {
@@ -31,6 +32,8 @@ namespace CugemderPortal.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CugemderDatabaseContext>();
+
+          //  services.AddScoped<IFileUpload, FileUpload>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

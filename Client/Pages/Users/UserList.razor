@@ -1,0 +1,81 @@
+﻿@page "/userlist"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using CugemderPortal.Shared.Models
+@attribute [Authorize]
+@inject HttpClient Http
+@inject IJSRuntime js
+
+<h1> User List </h1>
+
+@if (userlist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Grup</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (AspNetUsers user in userlist)
+            {
+
+                <tr>
+                    <td>@user.Email</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.SurName</td>
+                    @if (user.GroupNavigation == null)
+                    {
+                        <td> - </td>
+ }
+                    else
+                    {
+                        <td>@user.GroupNavigation.GroupName</td>
+}
+                    <td>
+                        <a class="btn btn-success" href="users/edit/@user.Id">Edit</a>
+                        <button class="btn btn-danger" @onclick="@(() => Delete(user.Id))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+
+    private AspNetUsers[] userlist;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            userlist = await Http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers");
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    async Task Delete(string userId)
+    {
+        var user = userlist.First(x => x.Id == userId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {user.FirstName} {user.SurName}'s ({user.Id}) Record?"))
+        {
+            await Http.DeleteAsync($"api/AspNetUsers/{userId}");
+            await OnInitializedAsync();
+        }
+    }
+
+}

@@ -5,6 +5,15 @@ namespace CugemderPortal.Shared.Models
 {
     public partial class AspNetUsers
     {
+        public AspNetUsers()
+        {
+            AspNetUserClaims = new HashSet<AspNetUserClaims>();
+            AspNetUserLogins = new HashSet<AspNetUserLogins>();
+            AspNetUserRoles = new HashSet<AspNetUserRoles>();
+            AspNetUserTokens = new HashSet<AspNetUserTokens>();
+            Uploads = new HashSet<Uploads>();
+        }
+
         public string Id { get; set; }
         public string UserName { get; set; }
         public string NormalizedUserName { get; set; }
@@ -35,6 +44,7 @@ namespace CugemderPortal.Shared.Models
         public int? Speciality { get; set; }
         public string SurName { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public string PhoneNo { get; set; }
 
         public virtual Genders GenderNavigation { get; set; }
         public virtual Groups GroupNavigation { get; set; }
@@ -42,5 +52,10 @@ namespace CugemderPortal.Shared.Models
         public virtual Notifications NotificationsNavigation { get; set; }
         public virtual Points PointsNavigation { get; set; }
         public virtual Positions PositionNavigation { get; set; }
+        public virtual ICollection<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
+        public virtual ICollection<AspNetUserTokens> AspNetUserTokens { get; set; }
+        public virtual ICollection<Uploads> Uploads { get; set; }
     }
 }

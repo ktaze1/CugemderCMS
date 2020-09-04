@@ -1,0 +1,28 @@
+﻿@page "/users/edit/{usersId}"
+@inject HttpClient http
+@inject NavigationManager uriHelper
+@inject IJSRuntime js
+<h3>Edit</h3>
+
+<UserForm ButtonText="Update" user="user" OnValidSubmit="@EditGroup" />
+
+@code {
+    [Parameter] public string usersId { get; set; }
+
+    AspNetUsers user = new AspNetUsers();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        user = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/{usersId}");
+    }
+
+
+
+    async Task EditGroup()
+    {
+        user.UpdatedAt = DateTime.UtcNow;
+        await http.PutAsJsonAsync($"api/AspNetUsers/{usersId}", user);
+        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        uriHelper.NavigateTo("userlist");
+    }
+}
