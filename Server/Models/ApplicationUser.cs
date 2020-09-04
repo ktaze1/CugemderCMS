@@ -8,6 +8,7 @@ namespace CugemderPortal.Server.Models
 {
     public class ApplicationUser : IdentityUser
     {
+
         public string CustomClaim { get; set; }
 
         public string firstName { get; set; }
@@ -16,13 +17,13 @@ namespace CugemderPortal.Server.Models
 
         public int? gender { get; set; }
 
-        public string? photoUrl { get; set; }
+        public string? company { get; set; }
 
-        public int? company { get; set; }
+        public string? photoUrl { get; set; }
 
         public int? jobTitle { get; set; }
 
-        public int? speciality { get; set; }
+        public string? speciality { get; set; }
 
         public int? position { get; set; }
 
@@ -37,6 +38,5 @@ namespace CugemderPortal.Server.Models
         public DateTime? createdAt { get; set; }
 
         public DateTime? updatedAt { get; set; }
-
     }
 }

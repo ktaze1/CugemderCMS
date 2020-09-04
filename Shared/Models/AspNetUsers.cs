@@ -21,7 +21,7 @@ namespace CugemderPortal.Shared.Models
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
         public string CustomClaim { get; set; }
-        public int? Company { get; set; }
+        public string Company { get; set; }
         public DateTime? CreatedAt { get; set; }
         public string FirstName { get; set; }
         public int? Gender { get; set; }
@@ -36,6 +36,11 @@ namespace CugemderPortal.Shared.Models
         public string SurName { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
+        public virtual Genders GenderNavigation { get; set; }
         public virtual Groups GroupNavigation { get; set; }
+        public virtual JobTitles JobTitleNavigation { get; set; }
+        public virtual Notifications NotificationsNavigation { get; set; }
+        public virtual Points PointsNavigation { get; set; }
+        public virtual Positions PositionNavigation { get; set; }
     }
 }
