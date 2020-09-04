@@ -14,6 +14,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using BlazorInputFile;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+using System.Security.Cryptography;
+using CugemderPortal.Shared.Models;
 
 namespace CugemderPortal.Server.Areas.Identity.Pages.Account
 {
@@ -24,17 +30,23 @@ namespace CugemderPortal.Server.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly IHostingEnvironment _environment;
+        private readonly CugemderDatabaseContext _context;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IHostingEnvironment environment,
+            CugemderDatabaseContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _environment = environment;
+            _context = context;
         }
 
         [BindProperty]
@@ -46,18 +58,24 @@ namespace CugemderPortal.Server.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+
+            [Required]
+            [Display(Name = "Ad")]
+            public string Name { get; set; }
+
+            [Required]
+            [Display(Name = "Soyad")]
+            public string Surname { get; set; }
+
+            [Required]
+            [Phone]
+            [Display(Name = "Telefon")]
+            public string Phone { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
-
-            [Required]
-            [Display(Name = "Name")]
-            public string Name { get; set; }
-
-            [Required]
-            [Display(Name = "Surname")]
-            public string Surname { get; set; }
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
@@ -69,6 +87,10 @@ namespace CugemderPortal.Server.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [BindProperty]
+            public IFormFileCollection Upload { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -79,15 +101,54 @@ namespace CugemderPortal.Server.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, firstName = Input.Name, surName= Input.Surname, createdAt = DateTime.UtcNow };
+
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, firstName = Input.Name, surName = Input.Surname, phoneNo = Input.Phone, createdAt = DateTime.UtcNow };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+                    long size = Input.Upload.Sum(s => s.Length);
+
+                    foreach (var item in Input.Upload)
+                    {
+                        if(item.Length > 0)
+                        {
+                            FileInfo fi = new FileInfo(item.FileName);
+                            string encodedStr = string.Format(@"{0}", Guid.NewGuid());
+
+                            //using (SHA1Managed sha1 = new SHA1Managed())
+                            //{
+                            //    var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(item.FileName));
+                            //    var sb = new StringBuilder(hash.Length * 2);
+
+                            //    foreach (byte b in hash)
+                            //    {
+                            //        // can be "x2" if you want lowercase
+                            //        sb.Append(b.ToString("X2"));
+                            //    }
+
+                            //    encodedStr = sb.ToString();
+                            //}
+
+                            var file = Path.Combine(_environment.ContentRootPath, "UploadedContent", $"{encodedStr}{fi.Extension}");
+                            Uploads uploads = new Uploads();
+                            uploads.UserId = user.Id;
+                            uploads.FileName = $"{encodedStr}{fi.Extension}";
+                            _context.Uploads.Add(uploads);
+                            await _context.SaveChangesAsync();
+
+                            using (var fileStream = new FileStream(file, FileMode.Create))
+                            {
+                                await item.CopyToAsync(fileStream);
+                            }
+                        }
+
+                    }
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

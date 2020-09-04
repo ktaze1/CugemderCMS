@@ -18,7 +18,7 @@
     }
     async Task EditGroup()
     {
-        group.UpdateAt = DateTime.UtcNow;
+        group.UpdatedAt = DateTime.UtcNow;
         await http.PutAsJsonAsync($"api/groups/{groupsId}", group);
         await js.InvokeVoidAsync("alert", $"Updated Successfully!");
         uriHelper.NavigateTo("groups");

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZIvmLlGihH968Uv0plb7x/mlaL2Hek5KADssE93AnA7PfQjfClPcy/IvGdKStPe1yLfeT6Wex9LsUgoBji4L+A==",
+  "dgSpecHash": "2aAjvx6A3smK0qRimZOOoixDqhVJ8Zm4naD6Uj0DscQY+Uw9tbQ/vJfvY5EjJMR+b5rwC//9w8H9jRqmsvp+sA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\CUGEMDER\\CugemderPortal\\CugemderCMS\\Shared\\CugemderPortal.Shared.csproj",
+  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
