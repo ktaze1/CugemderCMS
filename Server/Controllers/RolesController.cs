@@ -1,5 +1,6 @@
 ﻿using CugemderPortal.Server.Data;
 using CugemderPortal.Server.Models;
+using CugemderPortal.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,20 +12,25 @@ using System.Threading.Tasks;
 
 namespace CugemderPortal.Server.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class RolesController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ApplicationDbContext _context;
+        private readonly CugemderDatabaseContext _contextDb;
 
         public RolesController(
             UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager,
-            ApplicationDbContext applicationDbContext)
+            ApplicationDbContext applicationDbContext,
+            CugemderDatabaseContext contextDb)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _context = applicationDbContext;
+            _contextDb = contextDb;
         }
 
         [HttpGet("/roles")]
@@ -33,7 +39,7 @@ namespace CugemderPortal.Server.Controllers
             return await _context.Roles.Select(x => x.Name).ToListAsync();
         }
 
-        [HttpPost("User/AddRole")]
+        [HttpPost("/User/AddRole")]
         public async Task<IActionResult> AddRoleToUSer([FromBody] NewRoleForm newRole)
         {
             if (!ModelState.IsValid)
@@ -49,6 +55,26 @@ namespace CugemderPortal.Server.Controllers
             }
 
             await _userManager.AddToRoleAsync(user, newRole.NewRole);
+
+            return Ok();
+
+        }
+
+        [HttpPost]
+        [Route("/AddNewRole")]
+        public async Task<IActionResult> AddRoleWithGroup(AspNetUsers[] item)
+        {
+            foreach (var newUser in item)
+            {
+                var user = await _userManager.FindByIdAsync(newUser.Id);
+                if (!await _roleManager.RoleExistsAsync(newUser.GroupNavigation.GroupName))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole { Name = newUser.GroupNavigation.GroupName });
+                }
+
+                await _userManager.AddToRoleAsync(user, newUser.GroupNavigation.GroupName);
+
+            }
 
             return Ok();
 

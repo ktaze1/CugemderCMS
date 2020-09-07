@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CugemderPortal.Shared.Models;
+using Microsoft.AspNetCore.Identity;
+using CugemderPortal.Server.Models;
 
 namespace CugemderPortal.Server.Controllers
 {
@@ -14,6 +16,7 @@ namespace CugemderPortal.Server.Controllers
     public class GroupsController : ControllerBase
     {
         private readonly CugemderDatabaseContext _context;
+
 
         public GroupsController(CugemderDatabaseContext context)
         {
