@@ -1,0 +1,5 @@
+﻿<linker>
+  <assembly fullname="CugemderPortal.Client">
+    <type fullname="*" required="true" />
+  </assembly>
+</linker>

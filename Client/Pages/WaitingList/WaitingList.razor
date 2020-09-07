@@ -1,0 +1,39 @@
+﻿@page "/waitinglist"
+@inject HttpClient http
+@inject IJSRuntime js
+@inject NavigationManager uriHelper
+
+
+<p> Grup Atamasi Bekleyen Kullanicilar :</p>
+
+@if (waitingUsers == null)
+{
+    <p> Yukleniyor</p>
+}
+else
+{
+    <WaitingListForm waitingUsers="@waitingUsers" ButtonText="Guncelle" OnValidSubmit="@Update" />
+}
+
+@code {
+    AspNetUsers[] waitingUsers;
+    public int groupId = 0;
+    private List<Groups> groups = new List<Groups>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        waitingUsers = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/noGroup");
+        groups = await http.GetFromJsonAsync<List<Groups>>("api/groups");
+    }
+
+    async void Update()
+    {
+        foreach (AspNetUsers user in waitingUsers)
+        {
+           await http.PutAsJsonAsync($"api/AspNetUsers/newGroup/{user.Id}", user);
+        }
+
+        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        uriHelper.NavigateTo("admincontrols", true);
+    }
+}

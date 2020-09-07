@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CugemderPortal.Shared.Models;
+using Microsoft.AspNetCore.Identity;
+using CugemderPortal.Server.Models;
+using CugemderPortal.Server.Data;
 
 namespace CugemderPortal.Server.Controllers
 {
@@ -14,9 +17,17 @@ namespace CugemderPortal.Server.Controllers
     public class AspNetUsersController : ControllerBase
     {
         private readonly CugemderDatabaseContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ApplicationDbContext _appContext;
 
-        public AspNetUsersController(CugemderDatabaseContext context)
+        public AspNetUsersController(CugemderDatabaseContext context,
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
+
+            _userManager = userManager;
+            _roleManager = roleManager;
             _context = context;
         }
 
@@ -27,6 +38,21 @@ namespace CugemderPortal.Server.Controllers
             return await _context.AspNetUsers
                 .Include(c => c.GroupNavigation)
                 .ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("noGroup")]
+        public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetAspNetUsersWithoutGroups()
+        {
+            return await _context.AspNetUsers.Where(c => c.Group == null).Include(c => c.GroupNavigation)
+                .ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("Group")]
+        public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetAspNetUsersWithGroups()
+        {
+           return await _context.AspNetUsers.Include(c => c.GroupNavigation).Where( x => x.AspNetUserRoles.Count() == 0).ToListAsync();
         }
 
         // GET: api/AspNetUsers/5
@@ -104,6 +130,41 @@ namespace CugemderPortal.Server.Controllers
 
             return NoContent();
         }
+
+        // PUT: api/AspNetUsers/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPut("newGroup/{id}")]
+        public async Task<IActionResult> PutAspNetUsersWithRole(string id, AspNetUsers aspNetUsers)
+        {
+            if (id != aspNetUsers.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(aspNetUsers).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AspNetUsersExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+
+            return NoContent();
+        }
+
+
 
         // POST: api/AspNetUsers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
