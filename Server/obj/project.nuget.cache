@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XeYqIB7JRPdmjQ6eWA8aBCasaIimQJfAVMIhuhRoZkWNkj3Tlt3aeYEAAsUASsQp1gmEYZ2G04Zgj+RzORv7xw==",
+  "dgSpecHash": "4KWNbaII6ry3lIvehshR4sFaLlgPtnI0OquLMMtnxx3SUW+EW1QH/yHa4FJmlWZRVNJQiJ6Z0YzchysCtWqGXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
+  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kaan\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Kaan\\.nuget\\packages\\blazored.typeahead\\4.3.0\\blazored.typeahead.4.3.0.nupkg.sha512",

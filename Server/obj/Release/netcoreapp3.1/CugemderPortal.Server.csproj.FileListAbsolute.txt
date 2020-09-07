@@ -1,0 +1,6 @@
+C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Server\obj\Release\netcoreapp3.1\CugemderPortal.Server.AssemblyInfoInputs.cache
+C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Server\obj\Release\netcoreapp3.1\CugemderPortal.Server.AssemblyInfo.cs
+C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Server\obj\Release\netcoreapp3.1\CugemderPortal.Server.csproj.CoreCompileInputs.cache
+C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Server\obj\Release\netcoreapp3.1\CugemderPortal.Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Server\obj\Release\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cache
+C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Server\obj\Release\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cs

@@ -11224,11 +11224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
       "projectName": "CugemderPortal.Server",
-      "projectPath": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
+      "projectPath": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Server\\CugemderPortal.Server.csproj",
       "packagesPath": "C:\\Users\\Kaan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Server\\obj\\",
+      "outputPath": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -11248,11 +11248,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\CugemderPortal.Client.csproj": {
-              "projectPath": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\CugemderPortal.Client.csproj"
+            "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\CugemderPortal.Client.csproj": {
+              "projectPath": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\CugemderPortal.Client.csproj"
             },
-            "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {
-              "projectPath": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj"
+            "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj": {
+              "projectPath": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Shared\\CugemderPortal.Shared.csproj"
             }
           }
         }

@@ -1,84 +1,108 @@
-﻿@page "/claims"
-@page "/"
-@inject HttpClient http
-@*@inject AuthenticationStateProvider AuthenticationStateProvider
-    @using System.Security.Claims
-    @inject HttpClient http*@
+﻿@*@page "/claims"
+    @page "/"
 
-@if (roles == null)
-{
-    <p> Loading</p>
-}
-else
-{
+    @*h3>ClaimsPrincipal Data</h3>
 
-    @foreach (var role in roles)
-    {
-        @role
-    }
-}
+        <p>@_authMessage</p>
 
-
-
-<!--<-->@*h3>ClaimsPrincipal Data</h3>
-
-    <p>@_authMessage</p>
-
-    @if (_claims.Count() > 0)
-    {
-        <table class="table">
-            @foreach (var claim in _claims)
-            {
-                <tr>
-                    <td>@claim.Type</td>
-                    <td>@claim.Value</td>
-                </tr>
-            }
-        </table>
-    }
-
-    <p>@_userId</p>*@
-
-@code {
-
-            string[] roles;
-
-    protected override async Task OnInitializedAsync()
+        @if (_claims.Count() > 0)
         {
-            roles = await http.GetFromJsonAsync<string[]>("roles");
+            <table class="table">
+                @foreach (var claim in _claims)
+                {
+                    <tr>
+                        <td>@claim.Type</td>
+                        <td>@claim.Value</td>
+                    </tr>
+                }
+            </table>
+        }
+
+        <p>@_userId</p>*@
+
+
+
+@* @code {
+
+        AspNetUsers[] waitingUsers;
+
+        protected override async Task OnInitializedAsync()
+        {
+            waitingUsers = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/Group");
+            await Test();
         }
 
 
-    //private string _authMessage;
-    //private string _userId;
-    //private AspNetUsers _username;
-    //private string name;
-    //private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+        async Task Test()
+        {
+            foreach (var item in waitingUsers)
+            {
+                await http.PostAsJsonAsync<AspNetUsers>("AddNewRole", item);
+            }
+        }
 
-    //protected override async Task OnParametersSetAsync()
-    //{
-    //    await GetClaimsPrincipalData();
-    //    await base.OnParametersSetAsync();
-    //}
+        //private string _authMessage;
+        //private string _userId;
+        //private AspNetUsers _username;
+        //private string name;
+        //private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
-    //private async Task GetClaimsPrincipalData()
-    //{
-    //    var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-    //    var user = authState.User;
+        //protected override async Task OnParametersSetAsync()
+        //{
+        //    await GetClaimsPrincipalData();
+        //    await base.OnParametersSetAsync();
+        //}
 
-    //    if (user.Identity.IsAuthenticated)
-    //    {
-    //        _authMessage = $"{user.Identity.Name} is authenticated.";
-    //        _claims = user.Claims;
-    //        _userId = $"User Id: {user.FindFirst(c => c.Type == "sub")?.Value}";
+        //private async Task GetClaimsPrincipalData()
+        //{
+        //    var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        //    var user = authState.User;
 
-    //        _username = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/username/{_userId}");
+        //    if (user.Identity.IsAuthenticated)
+        //    {
+        //        _authMessage = $"{user.Identity.Name} is authenticated.";
+        //        _claims = user.Claims;
+        //        _userId = $"User Id: {user.FindFirst(c => c.Type == "sub")?.Value}";
 
-    //        name = _username.FirstName + ' ' + _username.SurName;
-    //    }
-    //    else
-    //    {
-    //        _authMessage = "The user is NOT authenticated.";
-    //    }
-    //}
+        //        _username = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/username/{_userId}");
+
+        //        name = _username.FirstName + ' ' + _username.SurName;
+        //    }
+        //    else
+        //    {
+        //        _authMessage = "The user is NOT authenticated.";
+        //    }
+        //}
+    }--> *@
+
+
+
+
+
+@page "/admincontrols"
+@inject HttpClient http
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <CugemderPortal.Client.Pages.GroupFolder.GroupsCreate />
+        </div>
+    </div>
+
+    <br />
+</div>
+
+
+
+@code{
+
+    private AspNetUsers[] usersNoRole;
+
+    protected override async Task OnInitializedAsync()
+    {
+        usersNoRole = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/Group");
+
+        await http.PostAsJsonAsync("/AddNewRole", usersNoRole);
+    }
+
 }

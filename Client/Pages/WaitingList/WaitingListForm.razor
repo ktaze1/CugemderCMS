@@ -1,0 +1,91 @@
+﻿@inject HttpClient http
+
+<EditForm Model="@waitingUsers" OnValidSubmit="@OnValidSubmit">
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Uye Adı</th>
+                <th>Atanacak Grubu</th>
+                <th>Dosyaları</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (AspNetUsers user in waitingUsers)
+            {
+                <tr>
+                    <td>@user.FirstName @user.SurName</td>
+                    <td>
+                        <select class="form-control"
+                                @bind="user.Group">
+                            <option value="0">---Grup Seçin---</option>
+                            @foreach (var group in groups)
+                            {
+                                @if (group.Id == groupId)
+                                {
+                                    <option selected value="@group.Id">@group.GroupName</option>
+                                }
+                                else
+                                {
+                                    <option value="@group.Id">@group.GroupName</option>
+                                }
+
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        @if (uploads == null)
+                        {
+                            <p> ... </p>
+                        }
+                        else
+                        {
+
+                            var test = uploads.Where(x => x.UserId == user.Id)
+                                            .ToList();
+
+                           foreach (Uploads item in test)
+                            {
+                                @item.FileName
+                            }
+                        }
+                    </td>
+
+                    <td>
+                        <a class="btn btn-success" href="">Edit</a>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    @if (waitingUsers.Length > 0)
+    {
+        <button type="submit"> @ButtonText </button>
+    }
+</EditForm>
+
+@code {
+    [Parameter] public AspNetUsers[] waitingUsers { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+
+    public int groupId = 0;
+    private List<Groups> groups = new List<Groups>();
+    private List<Uploads> uploads;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        groups = await http.GetFromJsonAsync<List<Groups>>("api/groups");
+        uploads = await http.GetFromJsonAsync<List<Uploads>>("api/Uploads");
+    }
+
+
+}

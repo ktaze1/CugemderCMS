@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B7getcoiuI7KERu/3mQvA5KpfPkL0tu2Pz4sdw0a1/5AhLSel7mk0aVe7S5/a3VmTlwFzRG3yydBWZx9leOg5A==",
+  "dgSpecHash": "Hkyxw0u03r/8r+042bZaio521EeDXsSZCCdoP2moLefKUfZHOu2+aLbMBl2j4pHD8r5N2WG+EF8DCjMkDBMBOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\CugemderPortal.Client.csproj",
+  "projectFilePath": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\CugemderPortal.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kaan\\.nuget\\packages\\blazored.typeahead\\4.3.0\\blazored.typeahead.4.3.0.nupkg.sha512",
     "C:\\Users\\Kaan\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",

@@ -1,6 +1,6 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Client\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\Kaan\Desktop\Cugemder Portal\Cugemder Portal Final\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\" />
   <ContentRoot BasePath="/Identity" Path="C:\Users\Kaan\.nuget\packages\microsoft.aspnetcore.identity.ui\3.1.7\staticwebassets\V4\" />
   <ContentRoot BasePath="_content/Blazored.Typeahead" Path="C:\Users\Kaan\.nuget\packages\blazored.typeahead\4.3.0\build\..\staticwebassets\" />
   <ContentRoot BasePath="_content/BlazorInputFile" Path="C:\Users\Kaan\.nuget\packages\blazorinputfile\0.2.0\build\..\staticwebassets\" />

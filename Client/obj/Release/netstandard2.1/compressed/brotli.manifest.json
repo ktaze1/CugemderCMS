@@ -1,0 +1,319 @@
+{
+  "FilesToCompress": [
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ltTRzU7tHsm59-ZZmDy4ufSff1IUVAbb4uoUN_7w7Ao=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Blazored.Typeahead.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Blazored.Typeahead.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\RjWbDFCNJKESSAdoOrrpjjA4HimQW4G3FMBg5bBsrZs=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\BlazorInputFile.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/BlazorInputFile.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\rfaymgpS-tAyPlD9nwviJR2aeqNVfc1hqnUWAyjAdzw=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\CugemderPortal.Client.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Client.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mjses2DyqIJKSF5erATzVJBdEMMXvB9_iYZr398PQIg=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\CugemderPortal.Shared.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Shared.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\TIlMgNcYALvMnZRF2OZTVODzwOB-zxYMgSki5p8rPKI=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Authorization.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Authorization.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\y-O4e7kYQcdp6kvlm_iWMILZRUan1ayczO24cMB-P3E=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Authorization.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\HVJB63soDNkwJABSQLkj0W1Lf0NGDgDnkSY9P_x6gDk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gwaiOCf43cugKYv5WDhmb1VllJVp1_n1j4hkITbaaQY=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Forms.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Forms.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xnPPlondcqDf0cMJgP1yFPXeHIBe05Bl6Xt1KWomt4Y=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\0G0onLzmGKxb3OQx0gVllKZo-ZRBd_5f2G9Mznn5xdc=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\CVZGlONiNizGGv-gJOMXvOmFfagCIiMK4QQPcr9uizk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Components.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.WebAssembly.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\tahivgjBIJGdSS-Vju4_s99PYqno747DjY2Ok_9UzGU=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.AspNetCore.Metadata.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Metadata.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\yIyHuiqYTPV6Cb2Oj9jH7WT7CsKKJbDWShwnTRIfIsk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.AsyncInterfaces.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\7nPijQDU0EbzDpN_g6wkdqhr-xJ5J1ulxq4Aa3H0vtw=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Bcl.HashCode.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.HashCode.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\C7Fh_qdL3q7JOY8QD9cGWx5I2N7wXF72r6TmzKgCJgk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.CSharp.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.CSharp.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\io1qh8GwjqbKNV05Pjpfm4UmlfCXRh7Y3_F5xTnGU9Q=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Data.SqlClient.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Data.SqlClient.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\62x5GADl93NDuM_IB9CEPeEauc9qv-01dnpuiH_Uajg=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.EntityFrameworkCore.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.EntityFrameworkCore.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\a_LNLJ61m2YVFBcQkiOT5ZeRDUoziU-32wmh5v7Gaws=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.EntityFrameworkCore.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.EntityFrameworkCore.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\khFi2DJl6HZI2H9gvpQgajGj2lYuWlg-t0Sowsg4Ty0=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.EntityFrameworkCore.Relational.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.EntityFrameworkCore.Relational.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\086-HdPfP-o4k-Ytr_hVDpX6DMeqRbBCjPBLpNlxCC8=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.EntityFrameworkCore.SqlServer.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.EntityFrameworkCore.SqlServer.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\FnvDY0J1KRBqmdfLJYbfnArghHOsDnpKk0OiQfwfBxc=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Caching.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Caching.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6ZR-fwkLzrXgHkSktQoPQzc-7s1g9KL2G5JnOvqBlpg=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Caching.Memory.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Caching.Memory.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\pOmI8oiXDhmmmJnzuHfo1y-jf-KkyozDlEkxChLlojo=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\fOBG0mUyg3UfgiEBKXFZYWbPRFpjUBeCS3vVehI_h1o=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6NJ58v-QLZ4TH9Iy7bJgSdjX9Pxvz1v-0LUChi9RfBw=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Configuration.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Configuration.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6yIs7SLbL2XJjghSpkZGpB8Lg4l1JPYqlrBqh0WR0x4=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\FB-wRJTC1UI8KaXmFv_5YOpIuhOe40mkiIODc5f2fSE=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.DependencyInjection.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\4i3E55QM4YBUJFgKcr_5iMrNMAFqF8Kk4Gp51fsVw_g=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Http.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Http.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ayzpqFpOGGlpyY8yFA_aBDrFNwJYvfrc4-fJPpo-Oqw=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.Abstractions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\vycVQXqPRRe-4_SlRw4RM37nSqPDHJNnkCPxxuMxecQ=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Logging.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\gZmhgca3yX-OTRHmf01X1qgUQgEAIO2BTxYUzB2iDeM=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Options.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Options.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\K1VgZE_4EvLSRA3bjBihCHFQ-Sy0wgOcFE0wbiYqMXQ=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Extensions.Primitives.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Primitives.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\7dtK75MSKy4MJX53eX7vl4cLjFwzomLsrpWIZk-cfVk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Identity.Client.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Identity.Client.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3cbvJEo8k8VJVQwyEZWWQ6yGRFQW8-219DaOnmsX3e4=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\zV-OfJNfNsG404X30Pwkdymdh1KmZpTVEmG-JNFVc-k=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.JSInterop.WebAssembly.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\sGx877VyWSjxQw6ZfRw7jAJIbu8b10vfT2x_ts8TCS4=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Net.Http.Headers.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Net.Http.Headers.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\5QHwcyqVz7fsNE-NUVoNeOOEfjdEfHpscQNuPNafRzo=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Microsoft.Win32.Registry.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Win32.Registry.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\AputTomeACFJaaJ5KIQmX4p_EJG3wVWFBND65vJZq5Y=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\Mono.Security.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/Mono.Security.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\6I8TEFR45reQomQZSHugg6fuRWxJ9p33Kyei236VYdE=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\mscorlib.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/mscorlib.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ot3He4PhHLyS_YY6U9BTu_vuBT8rjlXH9iHXeAa9ZnA=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Collections.Immutable.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Collections.Immutable.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\X08TCB5m5ZEH4l59-f3Op2Jz1zsYG9dJMmPMpD4qGx8=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.ComponentModel.DataAnnotations.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.ComponentModel.DataAnnotations.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\k1eHVr0ohY4pyya9lmTtKLm4GuApd4mofxHEmqbJBc8=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Core.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Core.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mJ7ahyK4f2KyzeZsw6_UdQ_ItNubrxyipwfL2tZypcA=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Data.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Data.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\YR99Gnc_laCXlMCrUc85aimH7KHMIK7qvyf2chB4Lnk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Diagnostics.DiagnosticSource.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Diagnostics.DiagnosticSource.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\F93GQHEDnsN30A-I9nt6ZnWU9BlNyeyo4VIR7aWmRTk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\yHPC5vd_4W39iZnqRLfa8BVhfHyg6xmUW8sbU0g_WbI=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\KQg6B_Eg-ObyJ6cCdRpHk3OOgMlyIRywJPSybAmpH9M=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\VundLbazLwgs93PJAVEYmLt9vucZ5NTHIfoghHwvUtw=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Net.Http.WebAssemblyHttpHandler.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Net.Http.WebAssemblyHttpHandler.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\xU1kcLHw5QBwPXaSHI3ps32gOwQo7HGUKLl9HOYKntk=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Numerics.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Numerics.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\nMMNj8uVDlZpF_mdiNlFiQjRRvI7OpfJdJWlNpr9-_8=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.CompilerServices.Unsafe.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\hh5AKRIqmjb_FVG18vYxYYRv5wPvn9JU3N_DMixpKgE=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Runtime.Serialization.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.Serialization.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\rFbaBfKMCecpKkZFQfaLttOTw6ZxraIE_JiLIj-svfU=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.ServiceModel.Internals.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.ServiceModel.Internals.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\0AZLOTh_0S8C6YIvGD4wY3Oz1QUtc3F6iQFI0avtOTI=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Encodings.Web.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encodings.Web.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\Gb4dYKdXBbz_Lvkp6v36NEeNLdME_qzeM5Ta2FLciaQ=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Text.Json.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Json.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\YyWyHLE5WARYCbfqjrTcK3vqcZYxkVIRWvI7n_CtvL0=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Transactions.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Transactions.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ntI7Pi7g7CpxEmQ0HW_r3Gr-vL-dNTRw_8Bz71PXvq0=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\hf_7X_pxEY3KKJVHeeaizGyL8H8KaIH1sOZLoVZkirQ=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\System.Xml.Linq.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/System.Xml.Linq.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\ROv0qyHA40zGqJoaxoOcRV-kuEafjx4inKZhQ4ePIIc=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\linker\\WebAssembly.Bindings.dll",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/_bin\/WebAssembly.Bindings.dll.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=.hash",
+      "Source": "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.3.2.0.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.3.2.0.js.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\3S0qzYaBEKOBXarzVLNzNAFXlwJr6nI3lFlYUpQTPH8=.hash",
+      "Source": "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.timezones.dat",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.timezones.dat.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\UC-3Rm1NkdNdlIrzYARo_dO-HDlS5mhPxo0IQv7kma8=.hash",
+      "Source": "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.runtime\\3.2.0\\tools\\dotnetwasm\\wasm\\dotnet.wasm",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/wasm\/dotnet.wasm.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\SPHS1EAPAcMFN4TEIUYl3FWtoCQTsNJch0XVGgok1eE=.hash",
+      "Source": "C:\\Users\\Kaan\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.build\\3.2.1\\tools\\blazor\\blazor.webassembly.js",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.br"
+    },
+    {
+      "InputSource": "obj\\Release\\netstandard2.1\\integrity\\kWPLlsABjhw9F4xuduBlqWSLL62Oa-N7E7HGo4tDyPs=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\Cugemder Portal\\Cugemder Portal Final\\CugemderPortal\\Client\\obj\\Release\\netstandard2.1\\blazor\\blazor.boot.json",
+      "Target": "obj\\Release\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.br"
+    }
+  ]
+}
