@@ -8,7 +8,6 @@
 
 @if (waitingUsers == null)
 {
-<<<<<<< HEAD
 
 }
 else
@@ -78,30 +77,19 @@ else
     {
         <button type="submit" @onclick="@( () => Update())"> Guncelle </button>
     }
-=======
-    <p> Yukleniyor</p>
-}
-else
-{
-    <WaitingListForm waitingUsers="@waitingUsers" ButtonText="Guncelle" OnValidSubmit="@Update" />
->>>>>>> f41ce94f043252d99b1e2679810c59dda6db057e
 }
 
 @code {
     AspNetUsers[] waitingUsers;
     public int groupId = 0;
     private List<Groups> groups = new List<Groups>();
-<<<<<<< HEAD
     private List<Uploads> uploads;
     private List<Points> points;
-=======
->>>>>>> f41ce94f043252d99b1e2679810c59dda6db057e
 
     protected override async Task OnInitializedAsync()
     {
         waitingUsers = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/noGroup");
         groups = await http.GetFromJsonAsync<List<Groups>>("api/groups");
-<<<<<<< HEAD
         uploads = await http.GetFromJsonAsync<List<Uploads>>("api/Uploads");
         points = await http.GetFromJsonAsync<List<Points>>("api/Points");
 
@@ -111,15 +99,12 @@ else
             user.Points = points.Where(x => x.UserId == user.Id).FirstOrDefault().Id;
         }
 
-=======
->>>>>>> f41ce94f043252d99b1e2679810c59dda6db057e
     }
 
     async void Update()
     {
         foreach (AspNetUsers user in waitingUsers)
         {
-<<<<<<< HEAD
             await http.PutAsJsonAsync($"api/AspNetUsers/newGroup/{user.Id}", user);
         }
         await js.InvokeVoidAsync("alert", $"Updated Successfully!");
@@ -135,12 +120,5 @@ else
             await http.DeleteAsync($"api/Uploads/{userId}");
             await http.DeleteAsync($"api/AspNetUsers/{userId}");
         }
-=======
-           await http.PutAsJsonAsync($"api/AspNetUsers/newGroup/{user.Id}", user);
-        }
-
-        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
-        uriHelper.NavigateTo("admincontrols", true);
->>>>>>> f41ce94f043252d99b1e2679810c59dda6db057e
     }
 }

@@ -43,8 +43,6 @@ obj\Debug\netstandard2.1\blazor\unlinked\System.ComponentModel.Annotations.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.ComponentModel.DataAnnotations.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Components.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.JSInterop.dll
-obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Authorization.dll
-obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Metadata.dll
 obj\Debug\netstandard2.1\blazor\unlinked\CugemderPortal.Shared.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.EntityFrameworkCore.Relational.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.Diagnostics.DiagnosticSource.dll
@@ -67,6 +65,8 @@ obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.Extensions.Caching.Memory.dll
 obj\Debug\netstandard2.1\blazor\unlinked\System.Collections.Immutable.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.EntityFrameworkCore.SqlServer.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.Data.SqlClient.dll
+obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Authorization.dll
+obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Metadata.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Components.Authorization.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll
 obj\Debug\netstandard2.1\blazor\unlinked\Microsoft.AspNetCore.Components.WebAssembly.dll
