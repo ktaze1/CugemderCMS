@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CugemderPortal.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CugemderPortal.Server.Controllers
 {
@@ -15,10 +17,12 @@ namespace CugemderPortal.Server.Controllers
     public class UploadsController : ControllerBase
     {
         private readonly CugemderDatabaseContext _context;
+        private readonly IHostingEnvironment _environment;
 
-        public UploadsController(CugemderDatabaseContext context)
+        public UploadsController(IHostingEnvironment environment, CugemderDatabaseContext context)
         {
             _context = context;
+            _environment = environment;
         }
 
         //GET: api/Uploads
@@ -105,6 +109,11 @@ namespace CugemderPortal.Server.Controllers
 
             foreach (var item in uploads)
             {
+                var file = Path.Combine(_environment.ContentRootPath, "UploadedContent", item.FileName);
+                if (System.IO.File.Exists(file))
+                {
+                    System.IO.File.Delete(file);
+                }
                 _context.Uploads.Remove(item);
             }
             await _context.SaveChangesAsync();

@@ -2,16 +2,16 @@
 @inject HttpClient http
 
 <style>
-    body {
-        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    }
 
     .emp-profile {
         padding: 3%;
         margin-top: 3%;
         margin-bottom: 3%;
+        border: thin;
+        border-color: black;
         border-radius: 0.5rem;
-        background: #fff;
+        background: rgba(170, 165, 165, 0.20);
+        ;
     }
 
     .profile-img {
@@ -118,9 +118,9 @@
     }
 </style>
 
-@if (currentUser == null) {
-<p> Loading</p>
-}
+@if (currentUser == null)
+{
+<p> Loading</p> }
 else
 {
 <div class="container emp-profile">
@@ -130,7 +130,7 @@ else
                 <div class="profile-img">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="" />
                     <div class="file btn btn-lg btn-primary">
-                        Change Photo
+                        Change Photo <!-- TODO Add Authorization-->
                         <input type="file" name="file" />
                     </div>
                 </div>
@@ -143,73 +143,105 @@ else
                     <h6>
                         @{ if (currentUser.JobTitleNavigation != null)
                             { <p>@currentUser.JobTitleNavigation.JobTitle</p>}
-                            else { <p> Is bilgisi Bulunamadi! </p>}
-                        }
+                            else
+                            { <p> Is bilgisi Bulunamadi! </p>} }
                     </h6>
-                    <p class="proile-rating">CUGEMDER PUANI : <span></span></p>
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--<div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
-            </div>-->
-        </div>
-        <div class="row">
-                <div class="col-md-4">
-                </div>
-            <div class="col-md-8">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Isim</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>@currentUser.FirstName @currentUser.SurName</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Email</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>@currentUser.Email</p>
+                    <h6>
+                        @{ if (currentUser.Company != null)
+                            { <p>@currentUser.Company</p>}
+                            else
+                            { <p> </p>} }
+                    </h6>
+                    <p class="proile-rating">
+                        CUGEMDER PUANI : 
+                        <span>
+                            @{ if (currentUser.PointsNavigation != null) {
+                                   <p>@currentUser.PointsNavigation.TotalPoints</p> }
+                                else {
+                                        <p> </p> 
+                                }
+                                }
+                        </span>
+                    </p>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bilgiler</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hakkında</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Telefon</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>@currentUser.PhoneNo</p>
+                        <div class="col-md-2">
+                            <!--<input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />  TODO Edit button auth-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-work">
+                                <!-- EMPTY -->
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Uzmanlik Alani</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>@currentUser.Speciality.GetValueOrDefault()</p>
+                        <div class="col-md-8">
+                            <div class="tab-content profile-tab" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Ad Soyad</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@currentUser.FirstName @currentUser.SurName</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>E-mail</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@currentUser.Email</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Telefon</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@currentUser.PhoneNo</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Uzmanlik Alani</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            @* <p>@if (currentUser.Speciality.GetValueOrDefault() != 0) {
+            @currentUser.Speciality
+            else{ <p>  </p>}
+        } </p> *@
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>}
+                </form>
+            </div>}
 
-@code { 
-    [Parameter] public string id { get; set; }
+@code { [Parameter] public string id { get; set; }
 
     private AspNetUsers currentUser;
 
     protected override async Task OnParametersSetAsync()
     {
         currentUser = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/{id}");
-    } 
-    }
+    } }
