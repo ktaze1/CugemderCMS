@@ -12,12 +12,6 @@ C:\Users\Kaan\Desktop\Cugemder Portal\CugemderPortalFinal\CugemderPortal\Server\
 C:\Users\Kaan\Desktop\Cugemder Portal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Kaan\Desktop\Cugemder Portal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cache
 C:\Users\Kaan\Desktop\Cugemder Portal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cs
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.AssemblyInfoInputs.cache
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.AssemblyInfo.cs
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.csproj.CoreCompileInputs.cache
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cache
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\bin\Debug\netcoreapp3.1\CugemderPortal.Client.StaticWebAssets.xml
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -367,6 +361,13 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\b
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\bin\Debug\netcoreapp3.1\CugemderPortal.Client.pdb
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\bin\Debug\netcoreapp3.1\CugemderPortal.Shared.pdb
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.csprojAssemblyReference.cache
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.AssemblyInfoInputs.cache
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.AssemblyInfo.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.csproj.CoreCompileInputs.cache
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cache
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.RazorAssemblyInfo.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.TagHelpers.input.cache
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.TagHelpers.output.cache
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Server\obj\Debug\netcoreapp3.1\CugemderPortal.Server.RazorCoreGenerate.cache

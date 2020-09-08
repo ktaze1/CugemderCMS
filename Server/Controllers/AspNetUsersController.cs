@@ -37,6 +37,21 @@ namespace CugemderPortal.Server.Controllers
         {
             return await _context.AspNetUsers
                 .Include(c => c.GroupNavigation)
+                .Include(c => c.PointsNavigation)
+                .OrderByDescending(c => c.PointsNavigation.TotalPoints)
+                .ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("NoNull")]
+        public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetAspNetUsersNoNull()
+        {
+            return await _context.AspNetUsers
+                .Include(c=> c.GroupNavigation)
+                .Include(c=> c.PointsNavigation)
+                .Where(c=> c.Points != null)
+                .Where(c=> c.Group != null)
+                .OrderByDescending(c=> c.PointsNavigation.TotalPoints)
                 .ToListAsync();
         }
 
@@ -52,14 +67,20 @@ namespace CugemderPortal.Server.Controllers
         [Route("Group")]
         public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetAspNetUsersWithGroups()
         {
-           return await _context.AspNetUsers.Include(c => c.GroupNavigation).Where( x => x.AspNetUserRoles.Count() == 0).ToListAsync();
+            return await _context.AspNetUsers.Include(c => c.GroupNavigation).Where(x => x.AspNetUserRoles.Count() == 0).ToListAsync();
         }
 
         // GET: api/AspNetUsers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<AspNetUsers>> GetAspNetUsers(string id)
         {
-            var aspNetUsers = await _context.AspNetUsers.FindAsync(id);
+            var aspNetUsers = await _context.AspNetUsers
+                .Include(c => c.PositionNavigation)
+                .Include(c => c.PointsNavigation)
+                .Include(c => c.JobTitleNavigation)
+                .Include(c => c.GroupNavigation)
+                .Include(c => c.JobTitleNavigation)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (aspNetUsers == null)
             {

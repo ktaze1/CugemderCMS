@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\TSHNVyYLXTNH9bhpv34BGwGb7nF4zDoqfoOYcx1TJtY=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\CME8sQj-uUY41vkMDtrKJroWP6I1ECZOTi0PlsNFL5o=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Client.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Client.dll.br"
     },
@@ -226,7 +226,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\7ZEUSs9HET4jwcLPwZVFmMG-K_KR9EceB6wZHLeu5SY=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\qd6Igl82eTPGktK9XFlOsyBIyNpi-PA2oEkAsPLh8zA=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Shared.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Shared.dll.br"
     },
@@ -396,12 +396,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\5XOy3FQm1Bco1nl5yrxyyh0VvCuKrEylS1YqrjRSgGs=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\ivFSXumqFwq0RRCGzlr-D2YBTAdZkOTzmGaOfGt4oEE=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Client.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Client.pdb.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\wzi5nEKNHU3jEgiBNg8NYuKH_xRyXxidophdelopozQ=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\VrlhilbNAdgHgmjJfiA7gLSUKdg_pKzDhAzYOVnnwus=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Shared.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Shared.pdb.br"
     },
@@ -431,7 +431,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.br"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\7h8Lz6C2WWYDuAvXbTS0vBzzP6fGXTTT7rTDAXDgiNU=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\aCZ7UpTnkq7VhFjQXABJdOnNAaLhzA3FbOivEHOgTzg=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.br"
     }

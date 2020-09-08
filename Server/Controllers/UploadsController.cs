@@ -95,18 +95,21 @@ namespace CugemderPortal.Server.Controllers
 
         // DELETE: api/Uploads/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Uploads>> DeleteUploads(int id)
+        public async Task<ActionResult<Uploads>> DeleteUploads(string id)
         {
-            var uploads = await _context.Uploads.FindAsync(id);
+            var uploads = await _context.Uploads.Where(c => c.UserId == id).ToListAsync();
             if (uploads == null)
             {
                 return NotFound();
             }
 
-            _context.Uploads.Remove(uploads);
+            foreach (var item in uploads)
+            {
+                _context.Uploads.Remove(item);
+            }
             await _context.SaveChangesAsync();
 
-            return uploads;
+            return NoContent();
         }
 
         private bool UploadsExists(int id)

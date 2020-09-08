@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "CugemderPortal.Client.dll": "sha256-TSHNVyYLXTNH9bhpv34BGwGb7nF4zDoqfoOYcx1TJtY=",
+      "CugemderPortal.Client.dll": "sha256-CME8sQj\/uUY41vkMDtrKJroWP6I1ECZOTi0PlsNFL5o=",
       "System.Net.Http.Json.dll": "sha256-WkuXkEV\/\/B1J2kYqjuSPxgHubOHALmA548PhKTed2JE=",
       "System.Buffers.dll": "sha256-ZxXy75PYbzJxNfAc\/SAP1nUYm4gt1jSaOpFnBb9m85M=",
       "mscorlib.dll": "sha256-BaZPMj95+YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=",
@@ -51,7 +51,7 @@
       "System.ComponentModel.DataAnnotations.dll": "sha256-LIfCYwg+PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=",
       "Microsoft.AspNetCore.Components.dll": "sha256-PEg9ghiKSWBTX0jq8pFDvv2Yvw92Y8W0ELtWrSE4fhA=",
       "Microsoft.JSInterop.dll": "sha256-LqwA2Rpm96Ualk0IhLZar87kfRCyKHzHTeTt2jYhm7M=",
-      "CugemderPortal.Shared.dll": "sha256-7ZEUSs9HET4jwcLPwZVFmMG\/K+KR9EceB6wZHLeu5SY=",
+      "CugemderPortal.Shared.dll": "sha256-qd6Igl82eTPGktK9XFlOsyBIyNpi\/PA2oEkAsPLh8zA=",
       "Microsoft.EntityFrameworkCore.Relational.dll": "sha256-XyAokdpwfGqmUdYp2pPSTtq7glZsc4+na2cubhJrsD0=",
       "System.Diagnostics.DiagnosticSource.dll": "sha256-MyQpxJogZX2HZkOwjTQKfhArqV0\/EJJxgpF\/E+YjP2w=",
       "System.Runtime.Extensions.dll": "sha256-1FBfAreOfbXDp0WA294BCrk0EIa5ZqlghOuvDlqFtk8=",
@@ -87,8 +87,8 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "CugemderPortal.Client.pdb": "sha256-5XOy3FQm1Bco1nl5yrxyyh0VvCuKrEylS1YqrjRSgGs=",
-      "CugemderPortal.Shared.pdb": "sha256-wzi5nEKNHU3jEgiBNg8NYuKH+xRyXxidophdelopozQ=",
+      "CugemderPortal.Client.pdb": "sha256-ivFSXumqFwq0RRCGzlr\/D2YBTAdZkOTzmGaOfGt4oEE=",
+      "CugemderPortal.Shared.pdb": "sha256-VrlhilbNAdgHgmjJfiA7gLSUKdg+pKzDhAzYOVnnwus=",
       "Microsoft.Data.SqlClient.pdb": "sha256-ymdPEsfx1uHdDaqrWa2MDKtStIdJa\/Wa33nxT48pI9s="
     },
     "runtime": {

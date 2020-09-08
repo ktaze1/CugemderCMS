@@ -292,6 +292,16 @@ namespace CugemderPortal.Shared.Models
                 entity.Property(e => e.AddedBy).IsRequired();
 
                 entity.Property(e => e.UpdatedAt).HasColumnType("datetime");
+
+                entity.Property(e => e.UserId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Points1)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Points_AspNetUsers");
             });
 
             modelBuilder.Entity<Positions>(entity =>

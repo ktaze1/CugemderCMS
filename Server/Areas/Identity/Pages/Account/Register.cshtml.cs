@@ -134,7 +134,8 @@ namespace CugemderPortal.Server.Areas.Identity.Pages.Account
 
                             //    encodedStr = sb.ToString();
                             //}
-
+                            
+                            _context.Points.Add(new Points { AddedBy = "Initilized", TotalPoints = 0, UserId = user.Id, UpdatedAt = DateTime.UtcNow });
                             var file = Path.Combine(_environment.ContentRootPath, "UploadedContent", $"{encodedStr}{fi.Extension}");
                             Uploads uploads = new Uploads();
                             uploads.UserId = user.Id;
@@ -146,6 +147,7 @@ namespace CugemderPortal.Server.Areas.Identity.Pages.Account
                             {
                                 await item.CopyToAsync(fileStream);
                             }
+
                         }
 
                     }

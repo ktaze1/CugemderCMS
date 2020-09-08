@@ -1,12 +1,32 @@
-﻿@page "/userlist"
+﻿@page "/userlist/{id:int}"
+@page "/userlist"
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using CugemderPortal.Shared.Models
 @attribute [Authorize]
-@inject HttpClient Http
+@inject HttpClient http
 @inject IJSRuntime js
+@inject NavigationManager uriHelper
 
 <h1> User List </h1>
+
+
+@if (groups == null)
+{
+}
+else
+{
+    <form @onsubmit="@( () => Navigate(option))">
+        <select @bind="option">
+            <option selected value="0"> Tum Uyeler</option>
+            @for (int i = 1; i <= groups.Length; i++)
+            {
+                <option value="@i">@groups[i - 1].GroupName Grubu</option>
+            }
+        </select>
+        <button type="submit">Grup Sec</button>
+    </form>
+}
 
 @if (userlist == null)
 {
@@ -18,28 +38,35 @@ else
         <thead>
             <tr>
                 <th>Email</th>
-                <th>Ad</th>
-                <th>Soyad</th>
+                <th>Ad Soyad</th>
+                <th></th>
                 <th>Grup</th>
                 <th>İşlemler</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (AspNetUsers user in userlist)
+            @foreach (AspNetUsers user in id.HasValue ? userlist.Where(x => x.Group == id) : userlist)
             {
 
                 <tr>
                     <td>@user.Email</td>
-                    <td>@user.FirstName</td>
-                    <td>@user.SurName</td>
+                    <td>@user.FirstName @user.SurName</td>
+                    @if (user.PointsNavigation == null)
+                    {
+                        <td> - </td>
+                    }
+                    else
+                    {
+                        <td>@user.PointsNavigation.TotalPoints</td>
+                    }
                     @if (user.GroupNavigation == null)
                     {
                         <td> - </td>
- }
+                    }
                     else
                     {
                         <td>@user.GroupNavigation.GroupName</td>
-}
+                    }
                     <td>
                         <a class="btn btn-success" href="users/edit/@user.Id">Edit</a>
                         <button class="btn btn-danger" @onclick="@(() => Delete(user.Id))">Delete</button>
@@ -55,12 +82,16 @@ else
 @code {
 
     private AspNetUsers[] userlist;
+    private Groups[] groups;
+    [Parameter] public int? id { get; set; }
+    private int option = 0;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            userlist = await Http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers");
+            userlist = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/NoNull");
+            groups = await http.GetFromJsonAsync<Groups[]>("api/groups");
         }
         catch (AccessTokenNotAvailableException exception)
         {
@@ -68,14 +99,35 @@ else
         }
     }
 
+    protected override void OnParametersSet()
+    {
+        option = id.GetValueOrDefault();
+    }
+
     async Task Delete(string userId)
     {
         var user = userlist.First(x => x.Id == userId);
         if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {user.FirstName} {user.SurName}'s ({user.Id}) Record?"))
         {
-            await Http.DeleteAsync($"api/AspNetUsers/{userId}");
+
+            await http.DeleteAsync($"api/Points/{userId}");
+            await http.DeleteAsync($"api/Uploads/{userId}");
+            await http.DeleteAsync($"api/AspNetUsers/{userId}");
             await OnInitializedAsync();
         }
     }
+
+    void Navigate(int option)
+    {
+        if (option == 0)
+        {
+            uriHelper.NavigateTo($"/userlist/");
+        }
+        else
+        {
+            uriHelper.NavigateTo($"/userlist/{groups.ElementAt(option - 1).Id}");
+        }
+    }
+
 
 }

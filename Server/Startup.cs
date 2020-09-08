@@ -14,6 +14,8 @@ using System.Linq;
 using CugemderPortal.Server.Data;
 using CugemderPortal.Server.Models;
 using CugemderPortal.Shared.Models;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 //using CugemderPortal.Server.Services;
 
 namespace CugemderPortal.Server
@@ -50,6 +52,8 @@ namespace CugemderPortal.Server
             services.AddAuthentication()
                 .AddIdentityServerJwt();
 
+            services.AddDirectoryBrowser();
+
             services.AddControllersWithViews().AddNewtonsoftJson(o => o.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddRazorPages();
         }
@@ -73,6 +77,17 @@ namespace CugemderPortal.Server
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
+            app.UseFileServer();
+
+            // using Microsoft.Extensions.FileProviders;
+            // using System.IO;
+            app.UseFileServer(new FileServerOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(env.ContentRootPath, "UploadedContent")),
+                RequestPath = "/UploadedContent",
+                EnableDirectoryBrowsing = true
+            });
 
             app.UseRouting();
 
