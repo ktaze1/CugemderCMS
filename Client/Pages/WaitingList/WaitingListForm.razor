@@ -1,6 +1,7 @@
 ﻿@inject HttpClient http
 
 <EditForm Model="@waitingUsers" OnValidSubmit="@OnValidSubmit">
+<<<<<<< HEAD
 
 
 
@@ -65,6 +66,33 @@
 
 
 
+=======
+    @foreach (AspNetUsers user in waitingUsers)
+    {
+        <div class="container">
+            <div class="row justify-content-start">
+                <p> isim: @user.FirstName @user.SurName</p>
+
+                <select class="form-control"
+                        @bind="user.Group">
+                    <option value="0">---Grup Seçin---</option>
+                    @foreach (var group in groups)
+                    {
+                        @if (group.Id == groupId)
+                        {
+                            <option selected value="@group.Id">@group.GroupName</option>
+                        }
+                        else
+                        {
+                            <option value="@group.Id">@group.GroupName</option>
+                        }
+
+                    }
+                </select>
+            </div>
+        </div>
+    }
+>>>>>>> f41ce94f043252d99b1e2679810c59dda6db057e
     @if (waitingUsers.Length > 0)
     {
         <button type="submit"> @ButtonText </button>
@@ -79,6 +107,7 @@
 
     public int groupId = 0;
     private List<Groups> groups = new List<Groups>();
+<<<<<<< HEAD
     private List<Uploads> uploads;
 
     protected override async Task OnParametersSetAsync()
@@ -88,4 +117,12 @@
     }
 
 
+=======
+
+    protected override async Task OnInitializedAsync()
+    {
+        groups = await http.GetFromJsonAsync<List<Groups>>("api/groups");
+    }
+
+>>>>>>> f41ce94f043252d99b1e2679810c59dda6db057e
 }
