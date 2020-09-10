@@ -2,7 +2,6 @@
 @using System.Security.Claims
 @using Microsoft.AspNetCore.Authorization
 @using System.ComponentModel.DataAnnotations
-@*@attribute [Authorize(Roles = "Administrators")]*@
 @inject HttpClient HttpClient
 @inject NavigationManager Navigation
 
@@ -11,37 +10,48 @@
 
     <p>Add a role to the current user.</p>
 </div>
-<div>
-    @if (_user != null)
-    {
-        <ul>
-            @foreach (var role in _user.Claims.Where(c => c.Type == "role"))
+
+<AuthorizeView Roles="Admin">
+
+    <Authorized Context="_auth">
+
+        <div>
+            @if (_user != null)
             {
-                <li>@role.Value</li>
+                <ul>
+                    @foreach (var role in _user.Claims.Where(c => c.Type == "role"))
+                    {
+                        <li>@role.Value</li>
+                    }
+                </ul>
+                <EditForm Model="_newRole" OnValidSubmit="Add_Role">
+                    <p class="input-group">
+                        <label>
+                            New role
+                            <InputText @bind-Value="_newRole.NewRole" />
+                        </label>
+                        <ValidationMessage For="() => _newRole.NewRole" />
+                    </p>
+                    <p>
+                        <input class="btn btn-primary" type="submit" value="Add new role" />
+                    </p>
+                </EditForm>
+                if (_successMessage != null)
+                {
+                    <p class="alert alert-success">@_successMessage<button type="button" class="close" @onclick="Dismiss"><span aria-hidden="true">&times;</span></button></p>
+                }
             }
-        </ul>
-        <EditForm Model="_newRole" OnValidSubmit="Add_Role">
-            <p class="input-group">
-                <label>
-                    New role
-                    <InputText @bind-Value="_newRole.NewRole" />
-                </label>
-                <ValidationMessage For="() => _newRole.NewRole" />
-            </p>
-            <p>
-                <input class="btn btn-primary" type="submit" value="Add new role" />
-            </p>
-        </EditForm>
-        if (_successMessage != null)
-        {
-            <p class="alert alert-success">@_successMessage<button type="button" class="close" @onclick="Dismiss"><span aria-hidden="true">&times;</span></button></p>
-        }
-    }
-    else
-    {
-        <p>User not available</p>
-    }
-</div>
+            else
+            {
+                <p>User not available</p>
+            }
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        No Auth
+    </NotAuthorized>
+</AuthorizeView>
+
 @code
 {
     ClaimsPrincipal _user;

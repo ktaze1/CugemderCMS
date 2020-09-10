@@ -1,6 +1,8 @@
 ﻿@page "/profile/{id}"
 @inject HttpClient http
 
+
+
 <style>
 
     .emp-profile {
@@ -87,6 +89,7 @@
 
     .profile-work {
         padding: 14%;
+        padding-top: 5%;
         margin-top: -15%;
     }
 
@@ -120,55 +123,57 @@
 
 @if (currentUser == null)
 {
-<p> Loading</p> }
+    <p> Loading</p> }
 else
 {
-<div class="container emp-profile">
-    <form method="post">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="" />
-                    <div class="file btn btn-lg btn-primary">
-                        Change Photo <!-- TODO Add Authorization-->
-                        <input type="file" name="file" />
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo <!-- TODO Add Authorization-->
+                            <input type="file" name="file" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="profile-head">
-                    <h5>
-                        @currentUser.FirstName @currentUser.SurName
-                    </h5>
-                    <h6>
-                        @{ if (currentUser.JobTitleNavigation != null)
-                            { <p>@currentUser.JobTitleNavigation.JobTitle</p>}
-                            else
-                            { <p> Is bilgisi Bulunamadi! </p>} }
-                    </h6>
-                    <h6>
-                        @{ if (currentUser.Company != null)
-                            { <p>@currentUser.Company</p>}
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            @currentUser.FirstName @currentUser.SurName
+                        </h5>
+                        <h6>
+                            @{ if (currentUser.JobTitleNavigation != null)
+                                { <p>@currentUser.JobTitleNavigation.JobTitle</p>}
                             else
                             { <p> </p>} }
-                    </h6>
-                    <p class="proile-rating">
-                        CUGEMDER PUANI : 
-                        <span>
-                            @{ if (currentUser.PointsNavigation != null) {
-                                   <p>@currentUser.PointsNavigation.TotalPoints</p> }
-                                else {
-                                        <p> </p> 
+                        </h6>
+                        <h6>
+                            @{ if (currentUser.Company != null)
+                                { <p>@currentUser.Company</p>}
+                            else
+                            { <p> </p>} }
+                        </h6>
+                        <p class="proile-rating">
+                            CUGEMDER PUANI :
+                            <span>
+                                @{ if (currentUser.PointsNavigation != null)
+                                    {
+                                <p>@currentUser.PointsNavigation.TotalPoints</p> }
+                            else
+                            {
+                                <p> </p>
+                            }
                                 }
-                                }
-                        </span>
-                    </p>
+                                </span>
+                                </p>
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bilgiler</a>
+                                        <AnchorLink class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bilgiler</AnchorLink>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hakkında</a>
+                                        <AnchorLink class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hakkında</AnchorLink>
                                     </li>
                                 </ul>
                             </div>
@@ -179,9 +184,6 @@ else
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="profile-work">
-                                <!-- EMPTY -->
-                            </div>
                         </div>
                         <div class="col-md-8">
                             <div class="tab-content profile-tab" id="myTabContent">
@@ -193,6 +195,17 @@ else
                                         <div class="col-md-6">
                                             <p>@currentUser.FirstName @currentUser.SurName</p>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Cinsiyet</label>
+                                        </div>
+                                        @if (currentUser.GenderNavigation != null)
+                                        {
+                                            <div class="col-md-6">
+                                                <p>@currentUser.GenderNavigation.GenderName</p>
+                                            </div>
+                                        }
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -210,24 +223,74 @@ else
                                             <p>@currentUser.PhoneNo</p>
                                         </div>
                                     </div>
+
+                                    @if (currentUser.PositionNavigation != null)
+                                    {
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Pozisyon</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@currentUser.PositionNavigation.Position</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @if (currentUser.PositionNavigation.Id != 2)
+                                                {
+                                                    <label>Mezuniyet Yılı</label>
+                                                }
+                                                else
+                                                {
+                                                    <label>Firma Kuruluş Yılı:</label>
+                                                }
+                                            </div>
+                                            @if (currentUser.Year != null)
+                                            {
+                                                <div class="col-md-6">
+                                                    <p>@currentUser.Year</p>
+                                                </div>
+                                            }
+                                        </div>
+
+                                    }
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>Uzmanlik Alani</label>
                                         </div>
                                         <div class="col-md-6">
-                                            @* <p>@if (currentUser.Speciality.GetValueOrDefault() != 0) {
-            @currentUser.Speciality
-            else{ <p>  </p>}
-        } </p> *@
-
+                                            <p>
+                                                @if (currentUser.Speciality != null)
+                                                {
+                                                    @currentUser.Speciality }
+                                                else
+                                                {
+                                                <p>  </p>}
+                                                </p>
+                                            </div>
                                         </div>
+                                        @if (currentUser.Website != null)
+                                        {
+                                            <div class="row">
+                                                <div class="col-md-6">
+
+                                                    <label>Web Sitesi :</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a href="@currentUser.Website"> @currentUser.Website</a><br />
+                                                </div>
+                                            </div>
+                                        }
                                     </div>
-                                </div>
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="row">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="card-body">
+                                                <p class="card-text">
+                                                    @if (currentUser.Summary != null)
+                                                    {
+                                                        @currentUser.Summary
+                                                    }
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -237,11 +300,14 @@ else
                 </form>
             </div>}
 
-@code { [Parameter] public string id { get; set; }
+@code {
+    [Parameter] public string id { get; set; }
 
     private AspNetUsers currentUser;
 
     protected override async Task OnParametersSetAsync()
     {
         currentUser = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/{id}");
-    } }
+    }
+
+}

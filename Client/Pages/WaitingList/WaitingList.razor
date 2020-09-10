@@ -108,7 +108,7 @@ else
             await http.PutAsJsonAsync($"api/AspNetUsers/newGroup/{user.Id}", user);
         }
         await js.InvokeVoidAsync("alert", $"Updated Successfully!");
-        OnInitialized();
+        uriHelper.NavigateTo("");
     }
 
     async Task Delete(string userId)

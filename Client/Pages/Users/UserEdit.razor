@@ -21,6 +21,10 @@
     async Task EditGroup()
     {
         user.UpdatedAt = DateTime.UtcNow;
+        if (user.Company.Trim() == "") user.Company = null;
+        if (user.Position == 0) user.Position = null;
+        if (user.Speciality.Trim() == "") user.Speciality = null;
+        if (user.Summary.Trim() == "") user.Summary = null;
         await http.PutAsJsonAsync($"api/AspNetUsers/{usersId}", user);
         await js.InvokeVoidAsync("alert", $"Updated Successfully!");
         uriHelper.NavigateTo("userlist");

@@ -1,0 +1,200 @@
+﻿@inject HttpClient http
+
+
+
+<EditForm Model="@user" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label>Ad :</label>
+        <div>
+            <InputText disabled="true" class="form-control" @bind-Value="@user.FirstName" />
+            <ValidationMessage For="@(() => user.FirstName)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Soyad :</label>
+        <div>
+            <InputText disabled="true" class="form-control" @bind-Value="@user.SurName" />
+            <ValidationMessage For="@(() => user.SurName)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Mail :</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@user.Email" />
+            <ValidationMessage For="@(() => user.Email)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Pozisyon :</label>
+        <div>
+            <select class="form-control"
+                    @bind="user.Position">
+                <option value="0">---Posizyon Secin---</option>
+                @foreach (var position in positions)
+                {
+                    @if (position.Id == positionId)
+                    {
+                        <option selected value="@position.Id">@position.Position</option>
+                    }
+                    else
+                    {
+                        <option value="@position.Id">@position.Position</option>
+                    }
+
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Cinsiyet :</label>
+        <div>
+            <select class="form-control"
+                    @bind="user.Gender">
+                <option value="0">---Cinsiyet Secin---</option>
+                @foreach (var gender in genders)
+                {
+                    <!-- 1 -Erkek
+                     2 -Kadin -->
+                    @if (gender.Id == genderId)
+                    {
+                        <option selected value="@gender.Id">@gender.GenderName</option>
+                    }
+                    else
+                    {
+                        <option value="@gender.Id">@gender.GenderName</option>
+                    }
+
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Firma :</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@user.Company" />
+            <ValidationMessage For="@(() => user.Company)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Meslek :</label>
+        <div>
+            <Blazored.Typeahead.BlazoredTypeahead ConvertMethod="ConvertJobTitle" SearchMethod="SearchFilms"
+                                                  @bind-Value="user.JobTitle">
+                <SelectedTemplate Context="_context">
+                    @{
+                        var selectedTitle = LoadSelectedJobTitle(_context);
+
+                        <text>@selectedTitle?.JobTitle</text>
+                    }
+                </SelectedTemplate>
+
+                <ResultTemplate Context="_context">
+                    @_context.JobTitle
+                </ResultTemplate>
+
+                <NotFoundTemplate>
+                    Bulunamadi
+                </NotFoundTemplate>
+
+            </Blazored.Typeahead.BlazoredTypeahead>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Speciality :</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@user.Speciality" />
+            <ValidationMessage For="@(() => user.Speciality)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Summary :</label>
+        <div>
+            <InputTextArea class="form-control" @bind-Value="@user.Summary" />
+            <ValidationMessage For="@(() => user.Summary)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Web Sitesi :</label>
+        <div>
+            <InputTextArea class="form-control" @bind-Value="@user.Website" />
+            <ValidationMessage For="@(() => user.Website)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Mezuniyet/Firma Kuruluş Yılı :</label>
+        <div>
+            <InputNumber class="form-control" @bind-Value="@user.Year" />
+            <ValidationMessage For="@(() => user.Year)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">
+        Guncelle
+    </button>
+</EditForm>
+
+
+@code {
+    [Parameter] public AspNetUsers user { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    DateTime time = DateTime.UtcNow;
+    private int groupId = 0;
+    private int positionId = 0;
+    private int genderId = 0;
+    private int jobTitleId = 0;
+
+
+    private List<Groups> groups = new List<Groups>();
+    private List<Positions> positions = new List<Positions>();
+    private List<Genders> genders = new List<Genders>();
+    private List<JobTitles> jobTitles = new List<JobTitles>();
+
+
+    private JobTitles selectedTitle;
+
+    private async Task<IEnumerable<JobTitles>> SearchJobTitle(string searchText)
+    {
+        return await http.GetFromJsonAsync<List<JobTitles>>($"api/JobTitles/named/{searchText}");
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        groups = await http.GetFromJsonAsync<List<Groups>>("api/groups");
+        positions = await http.GetFromJsonAsync<List<Positions>>("api/Positions");
+        genders = await http.GetFromJsonAsync<List<Genders>>("api/Genders");
+        jobTitles = await http.GetFromJsonAsync<List<JobTitles>>("api/JobTitles");
+    }
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (user != null)
+        {
+            groupId = user.Group.HasValue ? (int)user.Group : 0;
+            genderId = user.Gender.HasValue ? (int)user.Gender : 0;
+            positionId = user.Position.HasValue ? (int)user.Position : 0;
+            jobTitleId = user.JobTitle.HasValue ? (int)user.JobTitle : 0;
+        }
+    }
+
+    private async Task<IEnumerable<JobTitles>> SearchFilms(string searchText)
+    {
+
+        var testc = await Task.FromResult(jobTitles.Where(x => x.JobTitle.ToLower().Contains(searchText.ToLower())));
+        return testc;
+    }
+
+    public int? ConvertJobTitle(JobTitles jobTitle)
+    {
+        return jobTitle?.Id;
+    }
+
+    public JobTitles LoadSelectedJobTitle(int? id)
+    {
+        return jobTitles.FirstOrDefault(p => p.Id == id);
+    }
+
+
+}

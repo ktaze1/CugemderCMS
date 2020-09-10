@@ -4,9 +4,16 @@
 @inject NavigationManager Navigation
 @inject SignOutSessionStateManager SignOutManager
 
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authorization
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient http
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 <AuthorizeView>
     <Authorized>
-        <a href="authentication/profile">Hello, @context.User.Identity.Name!</a>
+        <a href="authentication/profile">Hello, @name!</a>
         <button class="nav-link btn btn-link" @onclick="BeginSignOut">Log out</button>
     </Authorized>
     <NotAuthorized>
@@ -15,10 +22,43 @@
     </NotAuthorized>
 </AuthorizeView>
 
-@code{
+@code{        
+    private string _authMessage;
+    private string _userId;
+    private AspNetUsers _username;
+    private string name;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await GetClaimsPrincipalData();
+        await base.OnParametersSetAsync();
+    }
+
     private async Task BeginSignOut(MouseEventArgs args)
     {
         await SignOutManager.SetSignOutState();
         Navigation.NavigateTo("authentication/logout");
+    }
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            _authMessage = $"{user.Identity.Name} is authenticated.";
+            _claims = user.Claims;
+            _userId = $"{user.FindFirst(c => c.Type == "sub")?.Value}";
+
+            _username = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/{_userId}");
+
+            name = _username.FirstName + ' ' + _username.SurName;
+        }
+        else
+        {
+            _authMessage = "The user is NOT authenticated.";
+        }
     }
 }

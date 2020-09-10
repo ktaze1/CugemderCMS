@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace CugemderPortal.Client
 {
-    public class RolesClaimPrincipalFactory : AccountClaimsPrincipalFactory<RemoteUserAccount>
+    public class RolesClaimsPrincipalFactory : AccountClaimsPrincipalFactory<RemoteUserAccount>
     {
-        public RolesClaimPrincipalFactory(IAccessTokenProviderAccessor accessor) : base(accessor)
+        public RolesClaimsPrincipalFactory(IAccessTokenProviderAccessor accessor) : base(accessor)
         {
-            //empty
         }
 
         public override async ValueTask<ClaimsPrincipal> CreateUserAsync(RemoteUserAccount account, RemoteAuthenticationUserOptions options)

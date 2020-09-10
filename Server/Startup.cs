@@ -16,6 +16,7 @@ using CugemderPortal.Server.Models;
 using CugemderPortal.Shared.Models;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using System.IdentityModel.Tokens.Jwt;
 //using CugemderPortal.Server.Services;
 
 namespace CugemderPortal.Server
@@ -47,7 +48,14 @@ namespace CugemderPortal.Server
                 .AddClaimsPrincipalFactory<AppClaimsPrincipalFactory>(); ;
 
             services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(options =>
+                {
+                    options.IdentityResources["openid"].UserClaims.Add("role"); // Roles
+                    options.ApiResources.Single().UserClaims.Add("role");
+                    options.IdentityResources["openid"].UserClaims.Add("custom_claim"); // Custom Claim
+                    options.ApiResources.Single().UserClaims.Add("custom_claim");
+                });
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("role");
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();

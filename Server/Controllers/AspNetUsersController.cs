@@ -38,6 +38,7 @@ namespace CugemderPortal.Server.Controllers
             return await _context.AspNetUsers
                 .Include(c => c.GroupNavigation)
                 .Include(c => c.PointsNavigation)
+                .Include(c => c.GenderNavigation)
                 .OrderByDescending(c => c.PointsNavigation.TotalPoints)
                 .ToListAsync();
         }
@@ -49,6 +50,7 @@ namespace CugemderPortal.Server.Controllers
             return await _context.AspNetUsers
                 .Include(c=> c.GroupNavigation)
                 .Include(c=> c.PointsNavigation)
+                .Include(c => c.GenderNavigation)
                 .Where(c=> c.Points != null)
                 .Where(c=> c.Group != null)
                 .OrderByDescending(c=> c.PointsNavigation.TotalPoints)
@@ -80,6 +82,7 @@ namespace CugemderPortal.Server.Controllers
                 .Include(c => c.JobTitleNavigation)
                 .Include(c => c.GroupNavigation)
                 .Include(c => c.JobTitleNavigation)
+                .Include(c => c.GenderNavigation)
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (aspNetUsers == null)

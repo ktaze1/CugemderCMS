@@ -72,8 +72,9 @@
                     @bind="user.Gender">
                 <option value="0">---Cinsiyet Secin---</option>
                 @foreach (var gender in genders)
-                { <!-- 1 -Erkek
-                       2 -Kadin -->
+                {
+                    <!-- 1 -Erkek
+                         2 -Kadin -->
                     @if (gender.Id == genderId)
                     {
                         <option selected value="@gender.Id">@gender.GenderName</option>
@@ -116,45 +117,36 @@
                 </NotFoundTemplate>
 
             </Blazored.Typeahead.BlazoredTypeahead>
-            @*<select class="form-control"
-                        @bind="user.JobTitle">
-                    <option value="0">---Meslek Seçin---</option>
-                    @foreach (var jobTitle in jobTitles)
-                    {
-                        @if (jobTitle.Id == genderId)
-                        {
-                            <option selected value="@jobTitle.Id">@jobTitle.JobTitle</option>
-                        }
-                        else
-                        {
-                            <option value="@jobTitle.Id">@jobTitle.JobTitle</option>
-                        }
-
-                    }
-                </select>*@
         </div>
     </div>
-    @* <div class="form-group">
-            <label>Position :</label>
-            <div>
-                <InputNumber class="form-control" @bind-Value="@user.Position" />
-                <ValidationMessage For="@(() => user.Position)" />
-            </div>
+    <div class="form-group">
+        <label>Speciality :</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@user.Speciality" />
+            <ValidationMessage For="@(() => user.Speciality)" />
         </div>
-        <div class="form-group">
-            <label>Speciality :</label>
-            <div>
-                <InputNumber class="form-control" @bind-Value="@user.Speciality" />
-                <ValidationMessage For="@(() => user.Speciality)" />
-            </div>
+    </div>
+    <div class="form-group">
+        <label>Summary :</label>
+        <div>
+            <InputTextArea class="form-control" @bind-Value="@user.Summary" />
+            <ValidationMessage For="@(() => user.Summary)" />
         </div>
-        <div class="form-group">
-            <label>Points :</label>
-            <div>
-                <InputNumber class="form-control" @bind-Value="@user.Points" />
-                <ValidationMessage For="@(() => user.Points)" />
-            </div>
-        </div>*@
+    </div>
+    <div class="form-group">
+        <label>Web Sitesi :</label>
+        <div>
+            <InputTextArea class="form-control" @bind-Value="@user.Website" />
+            <ValidationMessage For="@(() => user.Website)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Mezuniyet/Firma Kuruluş Yılı :</label>
+        <div>
+            <InputNumber class="form-control" @bind-Value="@user.Year" />
+            <ValidationMessage For="@(() => user.Year)" />
+        </div>
+    </div>
     <button type="submit" class="btn btn-success">
         @ButtonText
     </button>

@@ -162,13 +162,25 @@ namespace CugemderPortal.Shared.Models
 
                 entity.Property(e => e.ReferencedBy).HasColumnName("referencedBy");
 
-                entity.Property(e => e.Speciality).HasColumnName("speciality");
+                entity.Property(e => e.Speciality)
+                    .HasColumnName("speciality")
+                    .HasMaxLength(300);
+
+                entity.Property(e => e.Summary)
+                    .HasColumnName("summary")
+                    .HasColumnType("text");
 
                 entity.Property(e => e.SurName).HasColumnName("surName");
 
                 entity.Property(e => e.UpdatedAt).HasColumnName("updatedAt");
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
+
+                entity.Property(e => e.Website)
+                    .HasColumnName("website")
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.Year).HasColumnName("year");
 
                 entity.HasOne(d => d.GenderNavigation)
                     .WithMany(p => p.AspNetUsers)

@@ -149,6 +149,8 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\b
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.ComponentModel.DataAnnotations.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.JSInterop.dll
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\CugemderPortal.Shared.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Diagnostics.DiagnosticSource.dll
@@ -171,8 +173,6 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\b
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Collections.Immutable.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Data.SqlClient.dll
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Authorization.dll
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.Authorization.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll
@@ -236,6 +236,8 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\b
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.ComponentModel.DataAnnotations.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.JSInterop.dll.gz
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Authorization.dll.gz
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Metadata.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\CugemderPortal.Shared.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.EntityFrameworkCore.Relational.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Diagnostics.DiagnosticSource.dll.gz
@@ -258,8 +260,6 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\b
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Collections.Immutable.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.EntityFrameworkCore.SqlServer.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Data.SqlClient.dll.gz
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Authorization.dll.gz
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Metadata.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.Authorization.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll.gz
@@ -407,10 +407,13 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Profile.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Roles.razor.g.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\UserSetting\UserSettingForm.razor.g.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\UserSetting\UserSettings.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Users\UserEdit.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Users\UserForm.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Users\UserList.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\WaitingList\WaitingList.razor.g.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\AnchorLink.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\LoginDisplay.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -432,10 +435,13 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\Index.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\Profile.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\Roles.razor.g.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\UserSetting\UserSettingForm.razor.g.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\UserSetting\UserSettings.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\Users\UserEdit.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\Users\UserForm.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\Users\UserList.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Pages\WaitingList\WaitingList.razor.g.cs
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Shared\AnchorLink.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Shared\LoginDisplay.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Shared\MainLayout.razor.g.cs
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Shared\NavMenu.razor.g.cs
@@ -489,7 +495,9 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\LIfCYwg_PHltTK4z3EnbSkA7m2cn8JS4jHVthdKrDF8=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\PEg9ghiKSWBTX0jq8pFDvv2Yvw92Y8W0ELtWrSE4fhA=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\LqwA2Rpm96Ualk0IhLZar87kfRCyKHzHTeTt2jYhm7M=.hash
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\qd6Igl82eTPGktK9XFlOsyBIyNpi-PA2oEkAsPLh8zA=.hash
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\4NUQ26HmvXRi8smc0jz9940OUECDLQnoMWQLrMLe0ok=.hash
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\825GQI5nG1C1WqLD1SNKSpjzLCNbH2-KChgjBL0SSXI=.hash
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\7KMOKtjQQ7l6nwE1S8EnQgpaw2_HjFuG9Lv1IfqL7Hg=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\XyAokdpwfGqmUdYp2pPSTtq7glZsc4_na2cubhJrsD0=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\MyQpxJogZX2HZkOwjTQKfhArqV0-EJJxgpF-E_YjP2w=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\1FBfAreOfbXDp0WA294BCrk0EIa5ZqlghOuvDlqFtk8=.hash
@@ -511,8 +519,6 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\s1jmIj8JETh0vdd88gHWMNG0z7TmzIpQxsIbEfd5XOI=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\B5uEs0GsHLAPoArYV7ZBf46_DoOLygFpKNRwaR8hk0A=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\852m9C57qeZ4uBrVXkna3sUjwiqOeSrfF6sjSKXRUfk=.hash
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\4NUQ26HmvXRi8smc0jz9940OUECDLQnoMWQLrMLe0ok=.hash
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\825GQI5nG1C1WqLD1SNKSpjzLCNbH2-KChgjBL0SSXI=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\5lY1KL-pA7kS-OYycrkrhkXJKFHJHVbdmUTyPYaqDiM=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\AbWZIV0k4GOA_qT6O3719kiJxV5XbyEXKBWjy7wE8w4=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\FJ_rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=.hash
@@ -523,7 +529,7 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\r8LuqDQgcB-c3E48xHqsAY1eRZB1ZtuqZF6nlufn7kg=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\DrtNiKIMjfSOdamH5Bs5zHmjFADgNiwrY5tRgTm6XuI=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\czNf3btAeBW-vvID5LAfgcsNZ_GM3ssVuPaMflcg0rs=.hash
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\VrlhilbNAdgHgmjJfiA7gLSUKdg_pKzDhAzYOVnnwus=.hash
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\S2TtmoZdfrpYumAWV5oBV5a7lCSbzqJx2J_5QqCVnNw=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\ymdPEsfx1uHdDaqrWa2MDKtStIdJa-Wa33nxT48pI9s=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=.hash
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\3S0qzYaBEKOBXarzVLNzNAFXlwJr6nI3lFlYUpQTPH8=.hash
@@ -575,6 +581,8 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.ComponentModel.DataAnnotations.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.JSInterop.dll.gz
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Authorization.dll.gz
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Metadata.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\CugemderPortal.Shared.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.EntityFrameworkCore.Relational.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Diagnostics.DiagnosticSource.dll.gz
@@ -597,8 +605,6 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Collections.Immutable.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.EntityFrameworkCore.SqlServer.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Data.SqlClient.dll.gz
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Authorization.dll.gz
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Metadata.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.Authorization.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll.gz
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll.gz
@@ -662,6 +668,8 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.ComponentModel.DataAnnotations.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.JSInterop.dll.br
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Authorization.dll.br
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Metadata.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\CugemderPortal.Shared.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.EntityFrameworkCore.Relational.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Diagnostics.DiagnosticSource.dll.br
@@ -684,8 +692,6 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Collections.Immutable.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.EntityFrameworkCore.SqlServer.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Data.SqlClient.dll.br
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Authorization.dll.br
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Metadata.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.Authorization.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll.br
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll.br
@@ -708,8 +714,6 @@ C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\o
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\staticwebassets\CugemderPortal.Client.StaticWebAssets.xml
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\CugemderPortal.Client.dll
 C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\CugemderPortal.Client.pdb
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\RazorDeclaration\Shared\AnchorLink.razor.g.cs
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\Razor\Shared\AnchorLink.razor.g.cs
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\fWcP_whiFxkc4Qa0ynxRFCTziQ7YbLpC8yVlv6tSiiY=.hash
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\GGtkmQC0-3vtqA9RYzEo0USjbwKvGrEIDHvqodU90Iw=.hash
-C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\Y7bWyjIguhC5dU1J0HrKxq3wUVJxaAPSvYVbS6m73Ng=.hash
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\1Y8V0DaN8kewbtaJYTeLFzWZDFG8SylrwPkUNbIevN4=.hash
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\CEpzsjb93db6gKK83Cyo6-v9i0xx_Yt1Wo-BIzFzX9M=.hash
+C:\Users\Kaan\Desktop\CugemderPortal\CugemderPortalFinal\CugemderPortal\Client\obj\Debug\netstandard2.1\integrity\vZGWSF89AuDjqLd2HMkUpQZ7kbWufhbSa5E_Irl57iU=.hash

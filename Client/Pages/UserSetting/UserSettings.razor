@@ -1,0 +1,69 @@
+﻿@page "/setting"
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authorization
+@using System.ComponentModel.DataAnnotations
+@*@attribute [Authorize(Roles = "Administrators")]*@
+@using Microsoft.AspNetCore.Components.Authorization
+@inject HttpClient http
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime js
+@inject NavigationManager uriHelper
+
+<h3> Ayarlar</h3>
+@if (_username == null) {
+    <p> ... </p>
+}
+else
+{
+
+    <CugemderPortal.Client.Pages.UserSetting.UserSettingForm user="_username" OnValidSubmit="@EditUser" />
+
+}
+@code {
+    private string _authMessage;
+    private string _userId;
+    private AspNetUsers _username;
+    private string name;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetClaimsPrincipalData();
+        await base.OnParametersSetAsync();
+    }
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            _authMessage = $"{user.Identity.Name} is authenticated.";
+            _claims = user.Claims;
+            _userId = $"{user.FindFirst(c => c.Type == "sub")?.Value}";
+
+            _username = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/{_userId}");
+
+        }
+        else
+        {
+            _authMessage = "The user is NOT authenticated.";
+        }
+    }
+
+    async Task EditUser()
+    {
+        _username.UpdatedAt = DateTime.UtcNow;
+        if (_username.Company.Trim() == "") _username.Company = null;
+        if (_username.Position == 0) _username.Position = null;
+        if (_username.Speciality.Trim() == "") _username.Speciality = null;
+        if (_username.Summary.Trim() == "") _username.Summary = null;
+        await http.PutAsJsonAsync($"api/AspNetUsers/{_username.Id}", _username);
+        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        uriHelper.NavigateTo("userlist");
+    }
+
+}

@@ -37,41 +37,48 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Email</th>
                 <th>Ad Soyad</th>
-                <th></th>
+                <th>Puan</th>
                 <th>Grup</th>
-                <th>İşlemler</th>
+                <AuthorizeView Roles="User">
+                    <Authorized><th>İşlemler</th></Authorized>
+                    <NotAuthorized></NotAuthorized>
+                </AuthorizeView>
             </tr>
         </thead>
         <tbody>
             @foreach (AspNetUsers user in id.HasValue ? userlist.Where(x => x.Group == id) : userlist)
             {
 
-                <tr>
-                    <td>@user.Email</td>
-                    <td>@user.FirstName @user.SurName</td>
-                    @if (user.PointsNavigation == null)
-                    {
-                        <td> - </td>
-                    }
-                    else
-                    {
-                        <td>@user.PointsNavigation.TotalPoints</td>
-                    }
-                    @if (user.GroupNavigation == null)
-                    {
-                        <td> - </td>
-                    }
-                    else
-                    {
-                        <td>@user.GroupNavigation.GroupName</td>
-                    }
-                    <td>
-                        <a class="btn btn-success" href="users/edit/@user.Id">Edit</a>
-                        <button class="btn btn-danger" @onclick="@(() => Delete(user.Id))">Delete</button>
-                    </td>
-                </tr>
+            <tr>
+                <td><a href="/profile/@user.Id">@user.FirstName @user.SurName</a></td>
+                @if (user.PointsNavigation == null)
+                {
+                    <td> - </td>
+                }
+                else
+                {
+                    <td>@user.PointsNavigation.TotalPoints</td>
+                }
+                @if (user.GroupNavigation == null)
+                {
+                    <td> - </td>
+                }
+                else
+                {
+                    <td>@user.GroupNavigation.GroupName</td>
+                }
+                <AuthorizeView Roles="User">
+                    <Authorized>
+                        <td>
+                            <a class="btn btn-success" href="users/edit/@user.Id">Edit</a>
+                            <button class="btn btn-danger" @onclick="@(() => Delete(user.Id))">Delete</button>
+                        </td>
+                    </Authorized>
+
+                    <NotAuthorized></NotAuthorized>
+                </AuthorizeView>
+            </tr>
             }
         </tbody>
     </table>

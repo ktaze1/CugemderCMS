@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\fWcP_whiFxkc4Qa0ynxRFCTziQ7YbLpC8yVlv6tSiiY=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\1Y8V0DaN8kewbtaJYTeLFzWZDFG8SylrwPkUNbIevN4=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Client.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Client.dll.gz"
     },
@@ -226,7 +226,17 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\qd6Igl82eTPGktK9XFlOsyBIyNpi-PA2oEkAsPLh8zA=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\4NUQ26HmvXRi8smc0jz9940OUECDLQnoMWQLrMLe0ok=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Authorization.dll",
+      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Authorization.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\825GQI5nG1C1WqLD1SNKSpjzLCNbH2-KChgjBL0SSXI=.hash",
+      "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Metadata.dll",
+      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Metadata.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\7KMOKtjQQ7l6nwE1S8EnQgpaw2_HjFuG9Lv1IfqL7Hg=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Shared.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Shared.dll.gz"
     },
@@ -336,16 +346,6 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Data.SqlClient.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\4NUQ26HmvXRi8smc0jz9940OUECDLQnoMWQLrMLe0ok=.hash",
-      "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Authorization.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Authorization.dll.gz"
-    },
-    {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\825GQI5nG1C1WqLD1SNKSpjzLCNbH2-KChgjBL0SSXI=.hash",
-      "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Metadata.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Metadata.dll.gz"
-    },
-    {
       "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\5lY1KL-pA7kS-OYycrkrhkXJKFHJHVbdmUTyPYaqDiM=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Components.Authorization.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Authorization.dll.gz"
@@ -396,12 +396,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\GGtkmQC0-3vtqA9RYzEo0USjbwKvGrEIDHvqodU90Iw=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\CEpzsjb93db6gKK83Cyo6-v9i0xx_Yt1Wo-BIzFzX9M=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Client.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Client.pdb.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\VrlhilbNAdgHgmjJfiA7gLSUKdg_pKzDhAzYOVnnwus=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\S2TtmoZdfrpYumAWV5oBV5a7lCSbzqJx2J_5QqCVnNw=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\CugemderPortal.Shared.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/CugemderPortal.Shared.pdb.gz"
     },
@@ -431,7 +431,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Y7bWyjIguhC5dU1J0HrKxq3wUVJxaAPSvYVbS6m73Ng=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\vZGWSF89AuDjqLd2HMkUpQZ7kbWufhbSa5E_Irl57iU=.hash",
       "Source": "C:\\Users\\Kaan\\Desktop\\CugemderPortal\\CugemderPortalFinal\\CugemderPortal\\Client\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     }
