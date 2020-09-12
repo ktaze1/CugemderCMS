@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Blazored.Modal;
+using Radzen;
 
 namespace CugemderPortal.Client
 {
@@ -26,6 +28,11 @@ namespace CugemderPortal.Client
 
             builder.Services.AddApiAuthorization()
                 .AddAccountClaimsPrincipalFactory<RolesClaimsPrincipalFactory>();
+
+            builder.Services.AddBlazoredModal();
+            builder.Services.AddScoped<DialogService>();
+            builder.Services.AddScoped<NotificationService>();
+            builder.Services.AddScoped<TooltipService>();
 
             await builder.Build().RunAsync();
         }

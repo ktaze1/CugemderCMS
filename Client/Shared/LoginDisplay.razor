@@ -4,11 +4,12 @@
 @inject NavigationManager Navigation
 @inject SignOutSessionStateManager SignOutManager
 
-@using System.Security.Claims
 @using Microsoft.AspNetCore.Authorization
 @using System.ComponentModel.DataAnnotations
 @inject HttpClient http
 @inject NavigationManager Navigation
+
+@using System.Security.Claims
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 <AuthorizeView>
@@ -22,7 +23,7 @@
     </NotAuthorized>
 </AuthorizeView>
 
-@code{        
+@code{
     private string _authMessage;
     private string _userId;
     private AspNetUsers _username;
@@ -32,7 +33,7 @@
     protected override async Task OnParametersSetAsync()
     {
         await GetClaimsPrincipalData();
-        await base.OnParametersSetAsync();
+        await base.OnInitializedAsync();
     }
 
     private async Task BeginSignOut(MouseEventArgs args)

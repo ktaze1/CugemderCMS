@@ -1,4 +1,8 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
+﻿@using System.Security.Claims
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+<div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">CugemderPortal</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -8,7 +12,7 @@
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="@($"profile/{profileLink}")" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Anasayfa
             </NavLink>
         </li>
@@ -38,5 +42,21 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    private string profileLink;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            _claims = user.Claims;
+        }
+
+        profileLink = user.FindFirst(c => c.Type == "sub")?.Value.ToString();
     }
 }

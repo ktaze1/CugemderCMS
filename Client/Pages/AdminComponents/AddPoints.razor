@@ -1,0 +1,153 @@
+﻿@page "/addpoints/{id:int}"
+@page "/addpoints"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using CugemderPortal.Shared.Models
+@attribute [Authorize]
+@inject HttpClient http
+@inject IJSRuntime js
+@inject NavigationManager uriHelper
+
+<h1> User List </h1>
+
+
+@if (groups == null)
+{
+}
+else
+{
+    <form @onsubmit="@( () => Navigate(option))">
+        <select @bind="option">
+            <option selected value="0"> Tum Uyeler</option>
+            @for (int i = 1; i <= groups.Length; i++)
+            {
+                <option value="@i">@groups[i - 1].GroupName Grubu</option>
+            }
+        </select>
+        <button type="submit">Grup Sec</button>
+    </form>
+}
+
+@if (userlist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ad Soyad</th>
+                <th>Puan</th>
+                <th>Grup</th>
+                <AuthorizeView Roles="User">
+                    <Authorized><th>İşlemler</th></Authorized>
+                    <NotAuthorized></NotAuthorized>
+                </AuthorizeView>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (AspNetUsers user in id.HasValue ? userlist.Where(x => x.Group == id) : userlist)
+            {
+
+                <tr>
+                    <td><a href="/profile/@user.Id">@user.FirstName @user.SurName</a></td>
+                    @if (user.PointsNavigation == null)
+                    {
+                        <td> - </td>
+                    }
+                    else
+                    {
+                        <td>@user.PointsNavigation.TotalPoints</td>
+                        <td>
+                            <EditForm Model="user.PointsNavigation">
+                                <InputNumber class="form-control input-sm"  @bind-Value="@user.PointsNavigation.TotalPoints" />
+                            </EditForm>
+                        </td>
+                    }
+                    @if (user.GroupNavigation == null)
+                    {
+                        <td> - </td>
+                    }
+                    else
+                    {
+                        <td>@user.GroupNavigation.GroupName</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @if (userlist.Length > 0)
+    {
+        <button type="submit" @onclick="@( () => Update())"> Guncelle </button>
+    }
+}
+
+
+
+@code {
+
+    private AspNetUsers[] userlist;
+    private Groups[] groups;
+    [Parameter] public int? id { get; set; }
+    private int option = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            userlist = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/NoNull");
+            groups = await http.GetFromJsonAsync<Groups[]>("api/groups");
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        option = id.GetValueOrDefault();
+    }
+
+    async Task Delete(string userId)
+    {
+        var user = userlist.First(x => x.Id == userId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {user.FirstName} {user.SurName}'s ({user.Id}) Record?"))
+        {
+
+            await http.DeleteAsync($"api/Points/{userId}");
+            await http.DeleteAsync($"api/Uploads/{userId}");
+            await http.DeleteAsync($"api/AspNetUsers/{userId}");
+            await OnInitializedAsync();
+        }
+    }
+
+    void Navigate(int option)
+    {
+        if (option == 0)
+        {
+            uriHelper.NavigateTo($"/addpoints/");
+        }
+        else
+        {
+            uriHelper.NavigateTo($"/addpoints/{groups.ElementAt(option - 1).Id}");
+        }
+    }
+
+    async void Update()
+    {
+        foreach (AspNetUsers user in userlist)
+        {
+            user.PointsNavigation.TotalPoints = user.PointsNavigation.TotalPoints;
+            await http.PutAsJsonAsync($"api/Points/{user.PointsNavigation.Id}", user.PointsNavigation);
+        }
+        await js.InvokeVoidAsync("alert", $"Gruplar atandı! Rolleri Güncelleyiniz!");
+        uriHelper.NavigateTo("adminsettings");
+    }
+
+
+
+}

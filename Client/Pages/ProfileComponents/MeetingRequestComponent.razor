@@ -1,0 +1,49 @@
+﻿@using Radzen;
+@using Radzen.Blazor;
+<div class="simple-form">
+    <EditForm Model="meeting" OnValidSubmit="SubmitForm">
+        <DataAnnotationsValidator />
+
+        <div class="form-group">
+            <label>Lokasyon</label>
+            <InputText @bind-Value="meeting.Location" class="form-control" placeholder="Adres Giriniz" />
+            <ValidationMessage For="@(() => meeting.Location)" />
+        </div>
+        <div class="form-group">
+            <label>Tarih</label>
+            @*<InputDate @bind-Value="meeting.Date" @bind:format="yyy-MM-dd HH:mm"/> *@
+            <input type="datetime" @bind="meeting.Date" @bind:format="dd-MM-yyyy HH:mm"/>
+            <ValidationMessage For="@(() => meeting.Date)" />
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button @onclick="Cancel" class="btn btn-secondary">Cancel</button>
+    </EditForm>
+</div>
+
+@code {
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; }
+
+
+    Meetings meeting = new Meetings();
+
+    public async Task TestF()
+    {
+    }
+
+    protected override void OnInitialized()
+    {
+        BlazoredModal.SetTitle("Görüşme Detaylarını Giriniz");
+    }
+
+
+    async Task SubmitForm()
+    {
+        await BlazoredModal.Close(ModalResult.Ok(meeting));
+    }
+    async Task Cancel() => await BlazoredModal.Cancel();
+
+}

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace CugemderPortal.Shared.Models
 {
@@ -49,9 +48,8 @@ namespace CugemderPortal.Shared.Models
         public string PhoneNo { get; set; }
         public string Summary { get; set; }
         public string Website { get; set; }
-
-        [Range(1800,2050, ErrorMessage = "Geçerli bir tarih giriniz")]
         public int? Year { get; set; }
+        public int? OrderInGroup { get; set; }
 
         public virtual Genders GenderNavigation { get; set; }
         public virtual Groups GroupNavigation { get; set; }

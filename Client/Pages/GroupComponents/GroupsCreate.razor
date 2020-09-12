@@ -1,0 +1,17 @@
+﻿@inject HttpClient http
+@inject NavigationManager uriHelper
+@page "/group/create"
+
+<h2> Create Group </h2>
+
+<GroupsForm ButtonText="Create Group" group="@group" OnValidSubmit="@CreateGroup" />
+
+@code {
+    Groups group = new Groups();
+    async Task CreateGroup()
+    {
+        group.CreatedAt = DateTime.UtcNow;
+        await http.PostAsJsonAsync<Groups>("api/Groups", group);
+        uriHelper.NavigateTo("groups");
+    }
+}

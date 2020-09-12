@@ -6,8 +6,6 @@
 @inject SignOutSessionStateManager SignOutManager
 
 @using System.Security.Claims
-@using Microsoft.AspNetCore.Authorization
-@using System.ComponentModel.DataAnnotations
 @inject HttpClient http
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthenticationStateProvider
@@ -52,6 +50,8 @@
 
 @code
 {
+    [Parameter] public string isRefreshed { get; set; }
+
     private string _authMessage;
     private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
@@ -69,6 +69,10 @@
         {
             _authMessage = "The user is NOT authenticated.";
         }
+
+
+     Navigation.NavigateTo($"/profile/{user.FindFirst(c => c.Type == "sub")?.Value}", true);
+
     }
 
     private void IdentityLogin()

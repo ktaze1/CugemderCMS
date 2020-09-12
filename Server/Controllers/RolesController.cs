@@ -62,19 +62,16 @@ namespace CugemderPortal.Server.Controllers
 
         [HttpPost]
         [Route("/AddNewRole")]
-        public async Task<IActionResult> AddRoleWithGroup(AspNetUsers[] item)
+        public async Task<IActionResult> AddRoleWithGroup(AspNetUsers item)
         {
-            foreach (var newUser in item)
-            {
-                var user = await _userManager.FindByIdAsync(newUser.Id);
-                if (!await _roleManager.RoleExistsAsync(newUser.GroupNavigation.GroupName))
+                var user = await _userManager.FindByIdAsync(item.Id);
+                if (!await _roleManager.RoleExistsAsync(item.GroupNavigation.GroupName))
                 {
-                    await _roleManager.CreateAsync(new IdentityRole { Name = newUser.GroupNavigation.GroupName });
+                    await _roleManager.CreateAsync(new IdentityRole { Name = item.GroupNavigation.GroupName });
                 }
 
-                await _userManager.AddToRoleAsync(user, newUser.GroupNavigation.GroupName);
-
-            }
+                await _userManager.AddToRoleAsync(user, item.GroupNavigation.GroupName);
+                await _userManager.AddToRoleAsync(user, "Member");
 
             return Ok();
 

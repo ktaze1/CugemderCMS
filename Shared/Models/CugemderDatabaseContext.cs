@@ -26,6 +26,7 @@ namespace CugemderPortal.Shared.Models
         public virtual DbSet<Genders> Genders { get; set; }
         public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<JobTitles> JobTitles { get; set; }
+        public virtual DbSet<Meetings> Meetings { get; set; }
         public virtual DbSet<Notifications> Notifications { get; set; }
         public virtual DbSet<PersistedGrants> PersistedGrants { get; set; }
         public virtual DbSet<Points> Points { get; set; }
@@ -152,6 +153,8 @@ namespace CugemderPortal.Shared.Models
 
                 entity.Property(e => e.Notifications).HasColumnName("notifications");
 
+                entity.Property(e => e.OrderInGroup).HasColumnName("orderInGroup");
+
                 entity.Property(e => e.PhoneNo).HasColumnName("phoneNo");
 
                 entity.Property(e => e.PhotoUrl).HasColumnName("photoUrl");
@@ -261,6 +264,25 @@ namespace CugemderPortal.Shared.Models
                 entity.Property(e => e.JobTitle)
                     .IsRequired()
                     .HasMaxLength(200);
+            });
+
+            modelBuilder.Entity<Meetings>(entity =>
+            {
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.IsApproved).HasColumnName("isApproved");
+
+                entity.Property(e => e.Location)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.ReceiverId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.SenderId)
+                    .IsRequired()
+                    .HasMaxLength(450);
             });
 
             modelBuilder.Entity<Notifications>(entity =>

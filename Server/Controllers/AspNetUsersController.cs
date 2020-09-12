@@ -66,8 +66,8 @@ namespace CugemderPortal.Server.Controllers
         }
 
         [HttpGet]
-        [Route("Group")]
-        public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetAspNetUsersWithGroups()
+        [Route("NoRole")]
+        public async Task<ActionResult<IEnumerable<AspNetUsers>>> GetAspNetUsersWithoutRoles()
         {
             return await _context.AspNetUsers.Include(c => c.GroupNavigation).Where(x => x.AspNetUserRoles.Count() == 0).ToListAsync();
         }

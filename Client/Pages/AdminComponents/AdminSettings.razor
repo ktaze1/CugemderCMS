@@ -1,0 +1,70 @@
+﻿@page "/adminsettings"
+@inject HttpClient http
+@inject NavigationManager uriHelper
+@inject IJSRuntime js
+
+<h3>AdminSettings</h3>
+
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr class="row"> Ayarlar </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Rolleri ata </td>
+            <td>
+                <button @onclick="@AssignRoles"> Rolleri ata </button>
+            </td>
+        </tr>
+        <tr>
+            <td> Gruplari Duzenle </td>
+            <td>
+                <CugemderPortal.Client.Pages.GroupComponents.GroupsForm
+                   ButtonText="Grup Ekle" group="@group" OnValidSubmit="@CreateGroup" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@code {
+
+    private AspNetUsers[] userlistNoRole;
+    private AspNetUsers[] waitingUsers;
+    Groups group = new Groups();
+
+    protected override async Task OnInitializedAsync()
+    {
+        userlistNoRole = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/NoRole");
+        waitingUsers = await http.GetFromJsonAsync<AspNetUsers[]>("api/AspNetUsers/noGroup");
+    }
+
+    async Task AssignRoles()
+    {
+        if (waitingUsers.Length == 0)
+        {
+
+            foreach (var user in userlistNoRole)
+            {
+                await http.PostAsJsonAsync<AspNetUsers>("AddNewRole", user);
+            }
+        }
+        else
+        {
+            uriHelper.NavigateTo("waitinglist");
+        }
+    }
+
+    async Task CreateGroup()
+    {
+        group.CreatedAt = DateTime.UtcNow;
+        await http.PostAsJsonAsync<Groups>("api/Groups", group);
+        if (await js.InvokeAsync<bool>("confirm", $"Baska Grup Eklemek Ister Misiniz?"))
+        {
+            await OnInitializedAsync();
+        }
+        else
+        {
+            uriHelper.NavigateTo("groups");
+        }
+    }
+}
