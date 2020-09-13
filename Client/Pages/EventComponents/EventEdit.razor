@@ -1,0 +1,56 @@
+﻿@page "/events/edit/{eventId:int}"
+@inject HttpClient http
+@inject NavigationManager uriHelper
+@inject IJSRuntime js
+
+<div class="simple-form">
+    <EditForm Model="events" OnValidSubmit="@EditEvent">
+        <DataAnnotationsValidator />
+        <div class="form-group">
+            <label>Başlık</label>
+            <InputText @bind-Value="events.Title" class="form-control" placeholder="Başlık Giriniz" />
+            <ValidationMessage For="@(() => events.Title)" />
+        </div>
+        <div class="form-group">
+            <label>Lokasyon</label>
+            <InputText @bind-Value="events.Location" class="form-control" placeholder="Adres Giriniz" />
+            <ValidationMessage For="@(() => events.Location)" />
+        </div>
+        <div class="form-group">
+            <label>Aciklama</label>
+            <InputTextArea @bind-Value="events.Summary" class="form-control" placeholder="Açıklama Giriniz" />
+            <ValidationMessage For="@(() => events.Summary)" />
+        </div>
+        <div class="form-group">
+            <label>Tarih ve Saat</label>
+            <input type="datetime" @bind="events.DateTime" @bind:format="dd-MM-yyyy HH:mm" />
+            <ValidationMessage For="@(() => events.DateTime)" />
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Düzenle</button>
+        <button @onclick="Cancel" class="btn btn-secondary">İptal</button>
+    </EditForm>
+</div>
+
+@code{
+    [Parameter] public int eventId { get; set; }
+
+    Events events = new Events();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        events = await http.GetFromJsonAsync<Events>($"api/events/{eventId}");
+    }
+    async Task EditEvent()
+    {
+        await http.PutAsJsonAsync($"api/Events/{eventId}", events);
+        await js.InvokeVoidAsync("alert", $"Updated Successfully!");
+        uriHelper.NavigateTo("groups");
+    }
+    async Task Cancel()
+    {
+        uriHelper.NavigateTo("events");
+    }
+}

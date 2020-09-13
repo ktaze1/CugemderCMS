@@ -2,9 +2,9 @@
 @inject HttpClient http
 @inject NavigationManager uriHelper
 @inject IJSRuntime js
-<h3>Edit</h3>
+<h3>Güncelle</h3>
 
-<GroupsForm ButtonText="Update" group="group" OnValidSubmit="@EditGroup" />
+<GroupsForm ButtonText="Güncelle" group="group" OnValidSubmit="@EditGroup" />
 
 @code {
     [Parameter] public int groupsId { get; set; }

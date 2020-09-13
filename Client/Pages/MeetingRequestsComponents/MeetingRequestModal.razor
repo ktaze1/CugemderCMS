@@ -1,0 +1,60 @@
+﻿<div class="simple-form">
+    <EditForm Model="modalForm" OnValidSubmit="SubmitForm">
+        <DataAnnotationsValidator />
+
+        <div class="form-group">
+            <label>1. Kriter için puan veriniz:</label>
+            <InputNumber @bind-Value="modalForm.point1" class="form-control" placeholder="Puan Giriniz" />
+            <ValidationMessage For="@(() => modalForm.point1)" />
+        </div>
+        <div class="form-group">
+            <label>2. Kriter için puan veriniz:</label>
+            <InputNumber @bind-Value="modalForm.point2" class="form-control" placeholder="Puan Giriniz" />
+            <ValidationMessage For="@(() => modalForm.point2)" />
+        </div>
+        <div class="form-group">
+            <label>3. Kriter için puan veriniz:</label>
+            <InputNumber @bind-Value="modalForm.point3" class="form-control" placeholder="Puan Giriniz" />
+            <ValidationMessage For="@(() => modalForm.point3)" />
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Puanla</button>
+        <button @onclick="Cancel" class="btn btn-secondary">Vazgeç</button>
+    </EditForm>
+</div>
+
+@code {
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; }
+
+    MeetingPoints meetingPoint = new MeetingPoints();
+    Form modalForm = new Form();
+
+    public class Form
+    {
+        [Range(1,10, ErrorMessage = "Puan 1 ile 10 arasında olmalıdır!")]
+        public int point1 { get; set; }
+
+        [Range(1, 10, ErrorMessage = "Puan 1 ile 10 arasında olmalıdır!")]
+        public int point2 { get; set; }
+
+        [Range(1, 10, ErrorMessage = "Puan 1 ile 10 arasında olmalıdır!")]
+        public int point3 { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        BlazoredModal.SetTitle("Görüşme Detaylarını Giriniz");
+    }
+
+
+    async Task SubmitForm()
+    {
+        meetingPoint.TotalPoint = modalForm.point1 + modalForm.point2 + modalForm.point3;
+        await BlazoredModal.Close(ModalResult.Ok(meetingPoint));
+    }
+    async Task Cancel() => await BlazoredModal.Cancel();
+
+}

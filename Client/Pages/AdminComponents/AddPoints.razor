@@ -8,7 +8,7 @@
 @inject IJSRuntime js
 @inject NavigationManager uriHelper
 
-<h1> User List </h1>
+<h1> Puan Ekle </h1>
 
 
 @if (groups == null)
@@ -24,7 +24,7 @@ else
                 <option value="@i">@groups[i - 1].GroupName Grubu</option>
             }
         </select>
-        <button type="submit">Grup Sec</button>
+        <button type="submit">Grup Seç</button>
     </form>
 }
 
@@ -81,7 +81,7 @@ else
 
     @if (userlist.Length > 0)
     {
-        <button type="submit" @onclick="@( () => Update())"> Guncelle </button>
+        <button type="submit" @onclick="@( () => Update())"> Güncelle </button>
     }
 }
 

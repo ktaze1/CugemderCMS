@@ -8,7 +8,7 @@
 @inject IJSRuntime js
 @inject NavigationManager uriHelper
 
-<h1> User List </h1>
+<h1> Üyeler </h1>
 
 
 @if (groups == null)
@@ -30,7 +30,7 @@ else
 
 @if (userlist == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Yükleniyor...</em></p>
 }
 else
 {
@@ -40,7 +40,7 @@ else
                 <th>Ad Soyad</th>
                 <th>Puan</th>
                 <th>Grup</th>
-                <AuthorizeView Roles="User">
+                <AuthorizeView Roles="Admin">
                     <Authorized><th>İşlemler</th></Authorized>
                     <NotAuthorized></NotAuthorized>
                 </AuthorizeView>
@@ -68,11 +68,11 @@ else
                 {
                     <td>@user.GroupNavigation.GroupName</td>
                 }
-                <AuthorizeView Roles="User">
+                <AuthorizeView Roles="Admin">
                     <Authorized>
                         <td>
-                            <a class="btn btn-success" href="users/edit/@user.Id">Edit</a>
-                            <button class="btn btn-danger" @onclick="@(() => Delete(user.Id))">Delete</button>
+                            <a class="btn btn-success" href="users/edit/@user.Id">Düzenle</a>
+                            <button class="btn btn-danger" @onclick="@(() => Delete(user.Id))">Sil</button>
                         </td>
                     </Authorized>
 

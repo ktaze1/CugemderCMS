@@ -2,10 +2,7 @@
 @inject HttpClient client
 @inject IJSRuntime js
 
-<h3>Groups</h3>
-<div class="form-group">
-    <a class="btn btn-success" href="groups/create"><i class="oi oi-plus"></i> Create New</a>
-</div>
+<h3>Grup Listesi</h3>
 <br>
 @if (groups == null)
 {
@@ -31,8 +28,8 @@ else
                     <td>@group.Id</td>
                     <td>@group.GroupName</td>
                     <td>
-                        <a class="btn btn-success" href="groups/edit/@group.Id">Edit</a>
-                        <button class="btn btn-danger" @onclick="@(() => Delete(group.Id))">Delete</button>
+                        <a class="btn btn-success" href="groups/edit/@group.Id">Düzenle</a>
+                        <button class="btn btn-danger" @onclick="@(() => Delete(group.Id))">Sil</button>
                     </td>
                 </tr>
             }

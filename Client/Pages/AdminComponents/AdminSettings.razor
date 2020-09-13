@@ -3,24 +3,50 @@
 @inject NavigationManager uriHelper
 @inject IJSRuntime js
 
-<h3>AdminSettings</h3>
-
-<table class="table table-striped">
+<table class="table">
     <thead class="thead-light">
-        <tr class="row"> Ayarlar </tr>
+        <tr>
+            <td><h3> Ayarlar </h3></td>
+            <td></td>
+        </tr>
     </thead>
     <tbody>
         <tr>
-            <td> Rolleri ata </td>
             <td>
-                <button @onclick="@AssignRoles"> Rolleri ata </button>
+                <div class="nav-link">
+                    <span class="oi oi-shield" aria-hidden="true"></span> Rolleri ata
+                </div>
+            </td>
+            <td>
+                <button class="btn btn-info" @onclick="@AssignRoles">Rolleri ata </button>
             </td>
         </tr>
         <tr>
-            <td> Gruplari Duzenle </td>
             <td>
-                <CugemderPortal.Client.Pages.GroupComponents.GroupsForm
-                   ButtonText="Grup Ekle" group="@group" OnValidSubmit="@CreateGroup" />
+                <NavLink class="nav-link" href="groups">
+                    <span class="oi oi-people" aria-hidden="true"></span>Grup Listesi
+                </NavLink>
+            </td>
+            <td>
+                <CugemderPortal.Client.Pages.GroupComponents.GroupsForm ButtonText="Grup Ekle" group="@group" OnValidSubmit="@CreateGroup" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <NavLink class="nav-link" href="addpoints">
+                    <span class="oi oi-people" aria-hidden="true"></span>Puan Atamasi Yap
+                </NavLink>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> 
+                <NavLink class="nav-link" href="events">
+                    <span class="oi oi-people" aria-hidden="true"></span>Etkinlik Listesine Git
+                </NavLink> 
+            </td>
+            <td>
+                <button @onclick="ShowModal" class="btn btn-primary">Etkinlik Ekle</button>
             </td>
         </tr>
     </tbody>
@@ -65,6 +91,22 @@
         else
         {
             uriHelper.NavigateTo("groups");
+        }
+    }
+
+    [CascadingParameter] public IModalService Modal { get; set; }
+
+    Events events;
+
+    async Task ShowModal()
+    {
+        var MeetingModal = Modal.Show<CugemderPortal.Client.Pages.EventComponents.EventCreateModal>();
+        var result = await MeetingModal.Result;
+
+        if (!result.Cancelled)
+        {
+            events = (Events)result.Data;
+            await http.PostAsJsonAsync("api/Events", events);
         }
     }
 }

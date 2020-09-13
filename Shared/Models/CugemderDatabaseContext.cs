@@ -23,9 +23,12 @@ namespace CugemderPortal.Shared.Models
         public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<DeviceCodes> DeviceCodes { get; set; }
+        public virtual DbSet<Documents> Documents { get; set; }
+        public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Genders> Genders { get; set; }
         public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<JobTitles> JobTitles { get; set; }
+        public virtual DbSet<MeetingPoints> MeetingPoints { get; set; }
         public virtual DbSet<Meetings> Meetings { get; set; }
         public virtual DbSet<Notifications> Notifications { get; set; }
         public virtual DbSet<PersistedGrants> PersistedGrants { get; set; }
@@ -240,6 +243,38 @@ namespace CugemderPortal.Shared.Models
                 entity.Property(e => e.SubjectId).HasMaxLength(200);
             });
 
+            modelBuilder.Entity<Documents>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.Property(e => e.AllowedRoles).HasMaxLength(100);
+
+                entity.Property(e => e.Summary)
+                    .IsRequired()
+                    .HasMaxLength(300);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(200);
+            });
+
+            modelBuilder.Entity<Events>(entity =>
+            {
+                entity.Property(e => e.DateTime).HasColumnType("datetime");
+
+                entity.Property(e => e.Location)
+                    .IsRequired()
+                    .HasMaxLength(400);
+
+                entity.Property(e => e.Summary)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(300);
+            });
+
             modelBuilder.Entity<Genders>(entity =>
             {
                 entity.Property(e => e.GenderName)
@@ -266,11 +301,26 @@ namespace CugemderPortal.Shared.Models
                     .HasMaxLength(200);
             });
 
+            modelBuilder.Entity<MeetingPoints>(entity =>
+            {
+                entity.Property(e => e.ReceiverUserId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.HasOne(d => d.Meeting)
+                    .WithMany(p => p.MeetingPoints)
+                    .HasForeignKey(d => d.MeetingId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_MeetingPoints_Meetings");
+            });
+
             modelBuilder.Entity<Meetings>(entity =>
             {
                 entity.Property(e => e.Date).HasColumnType("datetime");
 
                 entity.Property(e => e.IsApproved).HasColumnName("isApproved");
+
+                entity.Property(e => e.IsResulted).HasColumnName("isResulted");
 
                 entity.Property(e => e.Location)
                     .IsRequired()
@@ -283,6 +333,12 @@ namespace CugemderPortal.Shared.Models
                 entity.Property(e => e.SenderId)
                     .IsRequired()
                     .HasMaxLength(450);
+
+                entity.HasOne(d => d.Sender)
+                    .WithMany(p => p.Meetings)
+                    .HasForeignKey(d => d.SenderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Meetings_AspNetUsers");
             });
 
             modelBuilder.Entity<Notifications>(entity =>

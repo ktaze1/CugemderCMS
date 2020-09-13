@@ -1,6 +1,4 @@
-﻿@using Radzen;
-@using Radzen.Blazor;
-<div class="simple-form">
+﻿<div class="simple-form">
     <EditForm Model="meeting" OnValidSubmit="SubmitForm">
         <DataAnnotationsValidator />
 
@@ -27,12 +25,8 @@
 
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; }
 
-
+    int totalPoints;
     Meetings meeting = new Meetings();
-
-    public async Task TestF()
-    {
-    }
 
     protected override void OnInitialized()
     {

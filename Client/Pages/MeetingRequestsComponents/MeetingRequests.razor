@@ -1,0 +1,177 @@
+﻿@page "/meetingRequests"
+@inject HttpClient http
+@using System.Security.Claims
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime js
+
+
+
+<h3> Puanlama Bekleyen Görüşme Talepleri </h3>
+
+
+
+@if (givePoints == null)
+{
+    <p><em>Yükleniyor</em></p>
+}
+else if (givePoints.Length == 0)
+{
+    <p> Kayıt Bulunamadı!</p>
+}
+else
+{
+    <div class="table-responsive align-content-start" style="padding-left: 1em;">
+        <table class="table">
+            <thead class="thead-light">
+                <tr class="row">
+                    <th class="col">Gonderen Uye</th>
+                    <th class="col">Lokasyon ve Tarih</th>
+                    <th class="col">İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var meeting in givePoints)
+                {
+                    <tr class="row">
+                        <td class="col-4"><a href="/profile/@meeting.SenderId">@meeting.Sender.FirstName @meeting.Sender.SurName</a></td>
+                        <td class="col-4">
+                            <p><strong>Adres</strong>: @meeting.Location </p>
+                            <p><strong>Tarih</strong>: @meeting.Date.ToLongDateString()</p>
+                            <p><strong>Saat</strong>:  @meeting.Date.ToLongTimeString()</p>
+                        </td>
+                        <td class="col-4">
+                            <button @onclick="@( () => ShowModal(meeting))" class="btn btn-primary" type="button"> Puanla</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+}
+
+<h3> Onay Bekleyen Görüşme Talepleri </h3>
+
+
+@if (meetingList == null)
+{
+    <p><em>Yükleniyor</em></p>
+}
+else if (meetingList.Length == 0)
+{
+    <p> Kayıt Bulunamadı!</p>
+}
+else
+{
+    <div class="table-responsive align-content-start" style="padding-left: 1em;">
+        <table class="table">
+            <thead class="thead-light">
+                <tr class="row">
+                    <th class="col"> Gonderen Uye</th>
+                    <th class="col"> Lokasyon ve Tarih</th>
+                    <th class="col"> İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var meeting in meetingList)
+                {
+                    <tr class="row">
+                        <td class="col"><a href="/profile/@meeting.SenderId">@meeting.Sender.FirstName @meeting.Sender.SurName</a></td>
+                        <td class="col">
+                            <p><strong>Adres</strong>: @meeting.Location </p>
+                            <p><strong>Tarih</strong>: @meeting.Date.ToLongDateString()</p>
+                            <p><strong>Saat</strong>:  @meeting.Date.ToLongTimeString()</p>
+                        </td>
+                        <td class="col">
+                            <button class="btn btn-info" type="button" @onclick="@(() => Approve(meeting.Id))"> Onayla</button>
+                            <button class="btn btn-danger" type="button" @onclick="@(() => Delete(meeting.Id))"> Reddet</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+}
+
+@code{
+
+
+    private Meetings[] meetingList, givePoints;
+    private AspNetUsers loggedUser, sender;
+    private string _userId;
+    private IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await GetClaimsPrincipalData();
+        await base.OnInitializedAsync();
+        meetingList = await http.GetFromJsonAsync<Meetings[]>($"api/Meetings/user/{_userId}");
+        givePoints = await http.GetFromJsonAsync<Meetings[]>($"api/Meetings/user/points/{_userId}");
+
+    }
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            _claims = user.Claims;
+            _userId = $"{user.FindFirst(c => c.Type == "sub")?.Value}";
+
+            loggedUser = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/{_userId}");
+
+        }
+    }
+
+    async Task<string> GetUser(string id)
+    {
+        sender = await http.GetFromJsonAsync<AspNetUsers>($"api/AspNetUsers/{id}");
+        var name = sender.FirstName + ' ' + sender.SurName;
+        return name;
+    }
+
+
+    async Task Delete(int meetingId)
+    {
+        var meeting = meetingList.First(x => x.Id == meetingId);
+        if (await js.InvokeAsync<bool>("confirm", $"{meeting.Sender.FirstName} {meeting.Sender.SurName} Talebini silmek istediginizden emin misiniz?"))
+        {
+            await http.DeleteAsync($"api/Meetings/{meetingId}");
+            await OnInitializedAsync();
+        }
+    }
+
+    async Task Approve(int meetingId)
+    {
+        var meeting = meetingList.First(x => x.Id == meetingId);
+        if (await js.InvokeAsync<bool>("confirm", $"{meeting.Sender.FirstName} {meeting.Sender.SurName} Talebini silmek istediginizden emin misiniz?"))
+        {
+            meeting.IsApproved = true;
+            await http.PutAsJsonAsync($"api/Meetings/{meetingId}", meeting);
+            await OnInitializedAsync();
+        }
+    }
+
+    [CascadingParameter] public IModalService Modal { get; set; }
+
+    MeetingPoints meetingPoint;
+
+    async Task ShowModal(Meetings meeting)
+    {
+        var MeetingModal = Modal.Show<MeetingRequestModal>();
+        var result = await MeetingModal.Result;
+
+        if (!result.Cancelled)
+        {
+            meetingPoint = (MeetingPoints)result.Data;
+            meetingPoint.MeetingId = meeting.Id;
+            meetingPoint.ReceiverUserId = meeting.ReceiverId;
+            meeting.IsResulted = true;
+            await http.PostAsJsonAsync("api/MeetingPoints", meetingPoint);
+            await http.PutAsJsonAsync($"api/Meetings/{meeting.Id}", meeting);
+        }
+    }
+}

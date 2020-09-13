@@ -11,6 +11,7 @@ namespace CugemderPortal.Shared.Models
             AspNetUserLogins = new HashSet<AspNetUserLogins>();
             AspNetUserRoles = new HashSet<AspNetUserRoles>();
             AspNetUserTokens = new HashSet<AspNetUserTokens>();
+            Meetings = new HashSet<Meetings>();
             Points1 = new HashSet<Points>();
             Uploads = new HashSet<Uploads>();
         }
@@ -61,6 +62,7 @@ namespace CugemderPortal.Shared.Models
         public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual ICollection<AspNetUserTokens> AspNetUserTokens { get; set; }
+        public virtual ICollection<Meetings> Meetings { get; set; }
         public virtual ICollection<Points> Points1 { get; set; }
         public virtual ICollection<Uploads> Uploads { get; set; }
     }

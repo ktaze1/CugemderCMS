@@ -22,15 +22,34 @@
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="waitinglist">
-                <span class="oi oi-list" aria-hidden="true"></span> Bekleme Listesi
+            <NavLink class="nav-link" href="events">
+                <span class="oi oi-people" aria-hidden="true"></span> Etkinlikler
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="meetingrequests">
+                <span class="oi oi-envelope-open" aria-hidden="true"></span> Görüşme Taleplerim
             </NavLink>
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="setting">
-                <span class="oi oi-list" aria-hidden="true"></span> Ayarlar
+                <span class="oi oi-pencil" aria-hidden="true"></span> Ayarlar
             </NavLink>
         </li>
+        <AuthorizeView Roles="Admin">
+            <Authorized>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="waitinglist">
+                        <span class="oi oi-list" aria-hidden="true"></span> Bekleme Listesi
+                    </NavLink>
+                </li>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="adminsettings">
+                        <span class="oi oi-list" aria-hidden="true"></span> Admin Ayarlari
+                    </NavLink>
+                </li>
+            </Authorized>
+        </AuthorizeView>
     </ul>
 </div>
 

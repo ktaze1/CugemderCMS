@@ -1,0 +1,75 @@
+﻿@page "/events"
+@inject HttpClient client
+@inject IJSRuntime js
+
+<h3>Etkinlikler</h3>
+
+<br>
+@if (events == null)
+{
+    <text>Loading...</text>
+}
+else if (events.Length == 0)
+{
+    <text>Etkinlik bulunamadi</text>
+}
+else
+{
+    <table class="table table-striped">
+        <tbody>
+            @foreach (Events eachEvent in events)
+            {
+
+            <tr>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@eachEvent.Title</h5>
+                                <p> Lokasyon : @eachEvent.Location </p>
+                                <p> Tarih: @eachEvent.DateTime.ToLongDateString() </p>
+                                <p> Saat: @eachEvent.DateTime.ToShortTimeString() </p>
+                                <AuthorizeView Roles="Admin">
+                                    <Authorized>
+                                        <a class="btn btn-success" href="events/edit/@eachEvent.Id">Düzenle</a>
+                                        <button class="btn btn-danger" @onclick="@(() => Delete(eachEvent.Id))">Sil</button>
+                                    </Authorized>
+                                </AuthorizeView>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+
+                @*<tr>
+                    <td>
+                        @eachEvent.Title  <br />
+                        @eachEvent.Location  <br />
+                        @eachEvent.DateTime.ToLongDateString()
+                        @eachEvent.DateTime.ToShortTimeString()
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="groups/edit/@eachEvent.Id">Edit</a>
+                        <button class="btn btn-danger" @onclick="@(() => Delete(eachEvent.Id))">Delete</button>
+                    </td>
+                </tr>*@
+                }
+</tbody>
+    </table>
+}
+@code {
+    Events[] events { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        events = await client.GetFromJsonAsync<Events[]>("api/Events");
+    }
+    async Task Delete(int eventID)
+    {
+        var eachEvent = events.First(x => x.Id == eventID);
+        if (await js.InvokeAsync<bool>("confirm", $"{eachEvent.Title} Kaydini silmek istediginizden emin misiniz?"))
+        {
+            await client.DeleteAsync($"api/Events/{eventID}");
+            await OnInitializedAsync();
+        }
+    }
+}

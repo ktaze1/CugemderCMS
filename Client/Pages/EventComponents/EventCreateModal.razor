@@ -1,0 +1,54 @@
+﻿
+<div class="simple-form">
+    <EditForm Model="events" OnValidSubmit="SubmitForm">
+        <DataAnnotationsValidator />
+        <div class="form-group">
+            <label>Başlık</label>
+            <InputText @bind-Value="events.Title" class="form-control" placeholder="Başlık Giriniz" />
+            <ValidationMessage For="@(() => events.Title)" />
+        </div>
+        <div class="form-group">
+            <label>Lokasyon</label>
+            <InputText @bind-Value="events.Location" class="form-control" placeholder="Adres Giriniz" />
+            <ValidationMessage For="@(() => events.Location)" />
+        </div>
+        <div class="form-group">
+            <label>Aciklama</label>
+            <InputTextArea @bind-Value="events.Summary" class="form-control" placeholder="Açıklama Giriniz" />
+            <ValidationMessage For="@(() => events.Summary)" />
+        </div>
+        <div class="form-group">
+            <label>Tarih ve Saat</label>
+            <input type="datetime" @bind="events.DateTime" @bind:format="dd-MM-yyyy HH:mm" />
+            <ValidationMessage For="@(() => events.DateTime)" />
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Ekle</button>
+        <button @onclick="Cancel" class="btn btn-secondary">İptal</button>
+    </EditForm>
+</div>
+
+
+@code {
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; }
+
+
+    Events events = new Events();
+
+
+    protected override void OnInitialized()
+    {
+        BlazoredModal.SetTitle("Görüşme Detaylarını Giriniz");
+    }
+
+
+    async Task SubmitForm()
+    {
+        await BlazoredModal.Close(ModalResult.Ok(events));
+    }
+    async Task Cancel() => await BlazoredModal.Cancel();
+
+}

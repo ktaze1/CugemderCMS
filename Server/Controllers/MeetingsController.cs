@@ -27,11 +27,38 @@ namespace CugemderPortal.Server.Controllers
             return await _context.Meetings.ToListAsync();
         }
 
+        [HttpGet]
+        [Route("user/points/{id}")]
+        public async Task<ActionResult<IEnumerable<Meetings>>> GetMeetingsNeedPoint(string id)
+        {
+            return await _context.Meetings
+                .Where(c => c.ReceiverId == id)
+                .Where(c => c.IsApproved == true)
+                .Where(c => c.IsResulted == false)
+                .Where(c => c.Date.AddHours(2) < DateTime.Now)
+                .Include(c => c.Sender)
+                .ToListAsync();
+        }
+
         // GET: api/Meetings/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Meetings>> GetMeetings(int id)
         {
             var meetings = await _context.Meetings.FindAsync(id);
+
+            if (meetings == null)
+            {
+                return NotFound();
+            }
+
+            return meetings;
+        }
+
+        [HttpGet]
+        [Route("user/{id}")]
+        public async Task<ActionResult<IEnumerable<Meetings>>> GetMeetingsOfUser(string id)
+        {
+            var meetings = await _context.Meetings.Include(c => c.Sender).Where(c => c.ReceiverId == id).ToListAsync();
 
             if (meetings == null)
             {
